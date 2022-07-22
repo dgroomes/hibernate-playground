@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+        xmlns="http://java.sun.com/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+        version="1.0">
+    <persistence-unit name="hibernate-playground-joins">
+
+        <!-- There has to be a better way than listing each class... -->
+        <class>dgroomes.db.Observation</class>
+        <class>dgroomes.db.ObservationType</class>
+
+        <properties>
+            <property name="hibernate.connection.driver_class" value="org.sqlite.JDBC"/>
+            <property name="hibernate.connection.url" value="jdbc:sqlite:observations.db"/>
+            <property name="hibernate.dialect" value="org.hibernate.community.dialect.SQLiteDialect"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.highlight_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

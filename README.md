@@ -34,13 +34,20 @@ A basic demo of Hibernate ORM.
 
 See the README in [basic/](basic/).
 
+### `joins/`
+
+An illustration of table joins in Hibernate ORM.
+
+See the README in [joins/](joins/).
+
 
 ## WishList
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Implement `basic/`
-* [ ] Implement a `joins/` project
+* [x] DONE Implement a `joins/` project
+* [ ] Consider using Hibernate Tools, try out the codegen. I like the jOOQ codegen, for example.
 
 
 ## Reference

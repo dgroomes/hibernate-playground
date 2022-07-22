@@ -93,6 +93,7 @@ which worked.
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * [ ] Implement a raw SQL example
+* [ ] Can we specify all the entity types by package instead of class-by-class?
 
 
 ## Reference

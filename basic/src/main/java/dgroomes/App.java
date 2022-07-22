@@ -42,7 +42,7 @@ public class App {
             .build();
 
     return new MetadataSources(registry)
-            .addPackage(Observation.class.getPackage())
+            .addPackage(Observation.class.getPackage()) // doesn't have any effect
             .addAnnotatedClass(Observation.class)
             .buildMetadata();
   }
@@ -51,7 +51,7 @@ public class App {
    * Query the database using Hibernate HQL (Hibernate Query Language)
    */
   private static void queryWithHql(Session session) {
-    var observations = session.createQuery("from Observation", Observation.class).list(); // This is HQL right?
+    var observations = session.createQuery("select o from Observation o", Observation.class).list();
     log.info("[Query using HQL] Found results...");
     for (var observation : observations) {
       log.info("Observation ({}): {}", observation.getId(), observation.getObservation());
