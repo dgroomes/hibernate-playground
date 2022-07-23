@@ -9,6 +9,8 @@ import org.hibernate.boot.Metadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.SQLException;
+
 /**
  * A Hibernate ORM example program showcasing joins. See the README for more information.
  */
@@ -23,6 +25,7 @@ public class App {
     try (var sessionFactory = entityManagerFactory.unwrap(SessionFactory.class);
          var session = sessionFactory.openSession()) {
 
+      applySchema(session);
       queryWithHql(session);
     }
   }
@@ -52,6 +55,24 @@ public class App {
 
     return Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
   }
+
+  /**
+   * Apply the database schema and add some test data;
+   */
+  private static void applySchema(Session session) {
+    session.doWork(connection -> {
+      try (var statement = connection.createStatement()) {
+
+        statement.execute(Util.readClasspathResource("/schema/1-create-table-observation-types.ddl"));
+        statement.execute(Util.readClasspathResource("/schema/2-create-table-observations.ddl"));
+        statement.execute(Util.readClasspathResource("/schema/3-sample-observation-types.sql"));
+        statement.execute(Util.readClasspathResource("/schema/4-sample-observations.sql"));
+      } catch (SQLException e) {
+        throw new IllegalStateException("Unexpected error while applying the database schema", e);
+      }
+    });
+  }
+
 
   /**
    * Query the database using Hibernate HQL (Hibernate Query Language)
