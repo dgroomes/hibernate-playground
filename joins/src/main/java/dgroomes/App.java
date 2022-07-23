@@ -1,8 +1,14 @@
 package dgroomes;
 
 import dgroomes.db.Observation;
+import dgroomes.db.Observation_;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -10,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * A Hibernate ORM example program showcasing joins. See the README for more information.
@@ -27,6 +34,7 @@ public class App {
 
       applySchema(session);
       queryWithHql(session);
+      queryWithCriteria(session);
     }
   }
 
@@ -73,9 +81,14 @@ public class App {
     });
   }
 
-
   /**
-   * Query the database using Hibernate HQL (Hibernate Query Language)
+   * Query the database using Hibernate HQL (Hibernate Query Language),
+   *
+   * When you enable SQL statement logging, you'll notice that Hibernate issues three 'select' statements to the database.
+   * The first is to the 'observations' table, but then there are two more to the 'observation_types' table which are
+   * used to get the 'description' column. This is kind of annoying because it slows down the application, makes the
+   * logs noisy and creates more points of failure (e.g. what if the first request is fine, but the second or third requests
+   * fail?).
    */
   private static void queryWithHql(Session session) {
     var observations = session.createQuery("select o from Observation o join fetch ObservationType ot", Observation.class).list();
@@ -87,17 +100,33 @@ public class App {
   }
 
   /**
-   * NOT YET IMPLEMENTED
+   * Query the database using Hibernate's Criteria API.
    *
-   * Query the database using Hibernates Criteria API.
+   * The Criteria API (the Jakarta-based Criteria API, not the original Hibernate-based one which it replaces) is powerful.
+   * It offers type safety and other options like fetch types. This comes at cost though. The procedural Java code that
+   * it takes to use the Criteria API is not as naturally expressive as the SQL queries we have come to learn and love.
+   * That's a trade-off.
    */
-  //  private static void queryWithCriteria() {
-  //    CriteriaBuilder cb = em.getCriteriaBuilder();
-  //    CriteriaQuery<Observation> cq = cb.createQuery(Observation.class);
-  //    Root<Observation> o = cq.from(Observation.class);
-  //
-  //    o.fetch("country",JoinType.INNER);
-  //
-  //    em.createQuery(cq.select(o)).getResultList();
-  //  }
+  private static void queryWithCriteria(EntityManager entityManager) {
+    CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+    CriteriaQuery<Observation> criteria = builder.createQuery(Observation.class);
+
+    Root<Observation> root = criteria.from(Observation.class);
+    criteria.select(root);
+
+    // This configuration is powerful. This ensures that Hibernate generates one monolithic SQL query to
+    // fetch all columns from the "observations" table and all columns from the "observation_types" table.
+    // In other words, there are no follow-up 'select' statements sent to the database. These follow-up select statements
+    // are known as the "N + 1 selects" problem.
+    root.fetch(Observation_.type);
+
+    TypedQuery<Observation> query = entityManager.createQuery(criteria);
+    List<Observation> observations = query.getResultList();
+
+    log.info("[Query using HQL] Found results...");
+    for (var observation : observations) {
+      log.info("Observation (id={}, type={}): {}", observation.getId(), observation.getType().getDescription(), observation.getObservation());
+    }
+    log.info("");
+  }
 }

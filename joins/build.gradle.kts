@@ -1,5 +1,6 @@
 plugins {
     application
+    id("org.hibernate.orm") version "6.1.1.Final"
 }
 
 repositories {
@@ -11,6 +12,9 @@ val h2Version = "2.1.214" // H2 releases: https://github.com/h2database/h2databa
 val hibernateVersion = "6.1.1.Final" // Hibernate ORM releases: https://hibernate.org/orm/releases/
 
 dependencies {
+    // Generate the metamodel classes
+    annotationProcessor("org.hibernate.orm:hibernate-jpamodelgen:$hibernateVersion")
+
     implementation("org.slf4j:slf4j-api:$slf4jVersion")
     implementation("org.slf4j:slf4j-simple:$slf4jVersion")
     implementation("com.h2database:h2:$h2Version")
