@@ -42,7 +42,6 @@ public class App {
             .build();
 
     return new MetadataSources(registry)
-            .addPackage(Observation.class.getPackage()) // doesn't have any effect
             .addAnnotatedClass(Observation.class)
             .buildMetadata();
   }

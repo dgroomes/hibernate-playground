@@ -1,5 +1,6 @@
 rootProject.name = "hibernate-playground"
 
 includeBuild("basic")
-includeBuild("joins")
+includeBuild("hql")
+includeBuild("criteria")
 includeBuild("sqlite")

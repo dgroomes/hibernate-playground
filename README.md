@@ -34,11 +34,17 @@ A basic demo of Hibernate ORM.
 
 See the README in [basic/](basic/).
 
-### `joins/`
+### `hql/`
 
-An illustration of table joins in Hibernate ORM. Comparing and contrasting HQL with the Criteria API.
+An illustration of Hibernate's *Hibernate Query Language*.
 
-See the README in [joins/](joins/).
+See the README in [hql/](hql/).
+
+### `criteria/`
+
+An illustration of the Criteria API within the Jakarta Persistence API.
+
+See the README in [criteria/](criteria/).
 
 ### `sqlite/`
 
@@ -56,7 +62,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [ ] Consider using Hibernate Tools, try out the codegen. I like the jOOQ codegen, for example.
 * [x] DONE Create a SQLite-specific project to showcase the interesting things with a Hibernate-to-SQLite integration:
       specifically the community dialects.
-* [ ] Consider splitting `joins/` into subprojects `hql/` and `criteria/`. This way, we can contrast the differences more easily.
+* [x] DONE Consider splitting `joins/` into subprojects `hql/` and `criteria/`. This way, we can contrast the differences more easily.
       Specifically, I want to contrast the "N + 1 selection problem". With the Criteria API, we have the option to get
       a nice "full fetch". But with HQL, we are stuck with subsequent fetches.
 

@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
     http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
         version="1.0">
-    <persistence-unit name="hibernate-playground-joins">
+    <persistence-unit name="hibernate-playground-criteria">
 
         <!-- There has to be a better way than listing each class... -->
         <class>dgroomes.db.Observation</class>
