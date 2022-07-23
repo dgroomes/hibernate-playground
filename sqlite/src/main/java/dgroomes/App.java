@@ -1,19 +1,16 @@
 package dgroomes;
 
-import org.h2.Driver;
+import dgroomes.db.Observation;
 import org.hibernate.Session;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.dialect.H2Dialect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.SQLException;
-
 /**
- * A Hibernate ORM example program. See the README for more information.
+ * Connect Hibernate to a SQLite database. See the README for more information.
  */
 public class App {
 
@@ -25,7 +22,6 @@ public class App {
     try (var sessionFactory = metadata.buildSessionFactory();
          var session = sessionFactory.openSession()) {
 
-      applySchema(session);
       queryWithHql(session);
     }
   }
@@ -40,30 +36,15 @@ public class App {
     System.setProperty("org.jboss.logging.provider", "slf4j");
 
     StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-            .applySetting("hibernate.dialect", H2Dialect.class.getName())
-            .applySetting("hibernate.connection.driver_class", Driver.class.getName())
-            .applySetting("hibernate.connection.url", "jdbc:h2:mem:hibernateplayground")
+            .applySetting("hibernate.dialect", org.hibernate.community.dialect.SQLiteDialect.class.getName())
+            .applySetting("hibernate.connection.driver_class", org.sqlite.JDBC.class.getName())
+            .applySetting("hibernate.connection.url", "jdbc:sqlite:observations.db")
             .build();
 
     return new MetadataSources(registry)
             .addPackage(Observation.class.getPackage()) // doesn't have any effect
             .addAnnotatedClass(Observation.class)
             .buildMetadata();
-  }
-
-  /**
-   * Apply the database schema and add some test data.
-   */
-  private static void applySchema(Session session) {
-    session.doWork(connection -> {
-      try (var statement = connection.createStatement()) {
-
-        statement.execute(Util.readClasspathResource("/1-observations-schema.sql"));
-        statement.execute(Util.readClasspathResource("/2-observations-data.sql"));
-      } catch (SQLException e) {
-        throw new IllegalStateException("Unexpected error while applying the database schema", e);
-      }
-    });
   }
 
   /**

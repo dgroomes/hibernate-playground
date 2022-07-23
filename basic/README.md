@@ -5,43 +5,33 @@ A basic demo of Hibernate ORM.
 
 ## Description
 
-This project defines a Java program that connects to a local SQLite database using Hibernate.
+This project defines a Java program that connects to an embedded H2 database using Hibernate.
 
 
 ## Instructions
 
 Follow these instructions to run the demo:
 
-1. Initialize a SQLite db with the schema and sample data:
-   * ```shell
-     sqlite3 observations.db < schema/1-observations-schema.sql
-     sqlite3 observations.db < schema/2-observations-data.sql
-     ```
-3. Use Java 17
-4. Run the program:
+1. Use Java 17
+2. Run the program:
    * ```shell
      ./gradlew run
      ```
    * Altogether, it should look like this:
      ```text
      $ ./gradlew run
-
+     
      > Task :run
-     21:33:59 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     21:33:59 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.community.dialect.SQLiteDialect
-     21:34:00 [main] INFO dgroomes.App - [Query using HQL] Found results...
-     21:34:00 [main] INFO dgroomes.App - Observation (1): The sky is blue
-     21:34:00 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
-     21:34:00 [main] INFO dgroomes.App -
+     13:11:08 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     13:11:09 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+     13:11:10 [main] INFO dgroomes.App - [Query using HQL] Found results...
+     13:11:10 [main] INFO dgroomes.App - Observation (1): The sky is blue
+     13:11:10 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
+     13:11:10 [main] INFO dgroomes.App - 
      ```
 
 
 ## Notes
-
-To exercise the Hibernate framework, we need a database. This project uses a SQLite database. Unfortunately, this creates
-a wrinkle because the Hibernate does not have first-class support for SQLite. Thankfully though, the Hibernate project
-is generous enough to carve out a special `hibernate-community-dialects` project where dialects for database like SQLite
-exist. Read more about Hibernate's support for community dialects [here](https://github.com/hibernate/hibernate-orm/blob/main/dialects.adoc#community-dialects).
 
 At first glance (about 30 minutes into it), Hibernate is looking pretty good to me. At least, the project appears highly
 active, the docs are extensive and more navigable than I remember, the website makes it clear what the different top-level
@@ -99,7 +89,6 @@ General clean-ups, TODOs and things I wish to implement for this project:
 ## Reference
 
 * [Hibernate ORM docs: *Hibernate Getting Started Guide*](https://docs.jboss.org/hibernate/orm/6.1/quickstart/html_single/#tutorial_annotations)
-* [`xerial/sqlite-jdbc`: JDBC driver for SQLite](https://github.com/xerial/sqlite-jdbc)
 * [Hibernate ORM: *User Guide* > *Native Bootstrapping*](https://docs.jboss.org/hibernate/orm/6.1/userguide/html_single/Hibernate_User_Guide.html#bootstrap-native)
   > You will almost always need to configure the `StandardServiceRegistry`, which is done through
     `org.hibernate.boot.registry.StandardServiceRegistryBuilder`.

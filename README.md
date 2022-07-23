@@ -40,6 +40,12 @@ An illustration of table joins in Hibernate ORM. Comparing and contrasting HQL w
 
 See the README in [joins/](joins/).
 
+### `sqlite/`
+
+Connect Hibernate to a SQLite database.
+
+See the README in [sqlite/](sqlite/).
+
 
 ## WishList
 
@@ -48,7 +54,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE Implement `basic/`
 * [x] DONE Implement a `joins/` project
 * [ ] Consider using Hibernate Tools, try out the codegen. I like the jOOQ codegen, for example.
-* [ ] Create a SQLite-specific project to showcase the interesting things with a Hibernate-to-SQLite integration:
+* [x] DONE Create a SQLite-specific project to showcase the interesting things with a Hibernate-to-SQLite integration:
       specifically the community dialects.
 * [ ] Consider splitting `joins/` into subprojects `hql/` and `criteria/`. This way, we can contrast the differences more easily.
       Specifically, I want to contrast the "N + 1 selection problem". With the Criteria API, we have the option to get

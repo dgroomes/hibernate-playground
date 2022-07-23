@@ -65,7 +65,7 @@ public class App {
   }
 
   /**
-   * Apply the database schema and add some test data;
+   * Apply the database schema and add some test data.
    */
   private static void applySchema(Session session) {
     session.doWork(connection -> {
