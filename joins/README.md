@@ -26,12 +26,12 @@ Follow these instructions to run the demo:
      $ ./gradlew run
 
      > Task :run
-     00:29:35 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     00:29:35 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.community.dialect.SQLiteDialect
-     00:29:37 [main] INFO dgroomes.App - [Query using HQL] Found results...
-     00:29:37 [main] INFO dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
-     00:29:37 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
-     00:29:37 [main] INFO dgroomes.App -
+     22:24:01 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     22:24:01 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+     22:24:02 [main] INFO dgroomes.App - [Query using HQL] Found results...
+     22:24:02 [main] INFO dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
+     22:24:02 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
+     22:24:02 [main] INFO dgroomes.App -
      ```
 
 
