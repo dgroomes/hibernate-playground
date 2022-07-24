@@ -1,11 +1,10 @@
 package dgroomes;
 
-import org.apache.tools.ant.BuildException;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.TaskAction;
 import org.hibernate.cfg.reveng.ReverseEngineeringSettings;
 import org.hibernate.cfg.reveng.ReverseEngineeringStrategy;
-import org.hibernate.dialect.*;
+import org.hibernate.dialect.PostgreSQL10Dialect;
 import org.hibernate.tool.api.metadata.MetadataDescriptor;
 import org.hibernate.tool.api.metadata.MetadataDescriptorFactory;
 import org.hibernate.tool.hbm2x.POJOExporter;
@@ -55,18 +54,7 @@ public class HibernateCodeGenTask extends DefaultTask {
   }
 
   private ReverseEngineeringStrategy setupReverseEngineeringStrategy() {
-    ReverseEngineeringStrategy strategy;
-    try {
-      strategy = ReverseEngineeringStrategy.class.cast(Class.forName("org.hibernate.cfg.reveng.DefaultReverseEngineeringStrategy").newInstance());
-    } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | ClassCastException e) {
-      throw new BuildException("org.hibernate.cfg.reveng.DefaultReverseEngineeringStrategy" + " not instanced.", e);
-    }
-
-    //    if (revengFile != null) {
-    //      OverrideRepository override = new OverrideRepository();
-    //      override.addFile(revengFile);
-    //      strategy = override.getReverseEngineeringStrategy(strategy);
-    //    }
+    ReverseEngineeringStrategy strategy = new org.hibernate.cfg.reveng.DefaultReverseEngineeringStrategy();
 
     ReverseEngineeringSettings settings =
             new ReverseEngineeringSettings(strategy)
@@ -84,14 +72,13 @@ public class HibernateCodeGenTask extends DefaultTask {
   private void executeExporter(MetadataDescriptor metadataDescriptor) throws Exception {
     POJOExporter pojoExporter = new POJOExporter();
     pojoExporter.setMetadataDescriptor(metadataDescriptor);
-    File outputDirectory = new File(getProject().getBuildDir(), "generated-sources");
+    File outputDirectory = new File(getProject().getProjectDir(), "src/main/java");
     pojoExporter.setOutputDirectory(outputDirectory);
-    //    if (templatePath != null) {
-    //      log.info("Setting template path to: " + templatePath);
-    //      pojoExporter.setTemplatePath(new String[]{templatePath});
-    //    }
-    pojoExporter.getProperties().setProperty("ejb3", "false");
-    pojoExporter.getProperties().setProperty("jdk5", "false");
+
+    // These properties are strangely named because of historical reasons.
+    // Think about them as "Yes we want JPA annotations and yes we want to use Java language features newer than Java 4".
+    pojoExporter.getProperties().setProperty("ejb3", "true");
+    pojoExporter.getProperties().setProperty("jdk5", "true");
     log.info("Starting POJO export to directory: " + outputDirectory + "...");
     pojoExporter.start();
   }
