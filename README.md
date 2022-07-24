@@ -59,7 +59,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Implement `basic/`
 * [x] DONE Implement a `joins/` project
-* [ ] Consider using Hibernate Tools, try out the codegen. I like the jOOQ codegen, for example.
+* [x] DONE Consider using Hibernate Tools, try out the codegen. I like the jOOQ codegen, for example.
 * [x] DONE Create a SQLite-specific project to showcase the interesting things with a Hibernate-to-SQLite integration:
       specifically the community dialects.
 * [x] DONE Consider splitting `joins/` into subprojects `hql/` and `criteria/`. This way, we can contrast the differences more easily.
