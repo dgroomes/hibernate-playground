@@ -27,6 +27,7 @@ public class App {
 
       applySchema(session);
       queryWithHql(session);
+      queryWithSql(session);
     }
   }
 
@@ -71,6 +72,19 @@ public class App {
   private static void queryWithHql(Session session) {
     var observations = session.createQuery("select o from Observation o", Observation.class).list();
     log.info("The HQL query found results...");
+    for (var observation : observations) {
+      log.info("Observation ({}): {}", observation.getId(), observation.getObservation());
+    }
+    log.info("");
+  }
+
+  /**
+   * Query the database using SQL. Sometimes this is referred to as "raw SQL" to emphasize that it was authored directly
+   * by a person instead of generated dynamically by an ORM tool. In Hibernate, this is called a "native query".
+   */
+  private static void queryWithSql(Session session) {
+    var observations = session.createNativeQuery("select * from observations", Observation.class).list();
+    log.info("The hand-written SQL query found results...");
     for (var observation : observations) {
       log.info("Observation ({}): {}", observation.getId(), observation.getObservation());
     }
