@@ -26,7 +26,7 @@ Follow these instructions to run the demo:
      ```
    * Altogether, it should look like this:
      ```text
-     $ gw run
+     $ ./gradlew run
      
      > Task :run
      17:49:46 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)

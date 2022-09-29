@@ -12,7 +12,7 @@
 ## Description
 
 I want to lean Hibernate better. It can be complex because ORM itself is tricky and because Hibernate has developed a
-a rich feature set over many years (along with a rich set of idiosyncrasies). I will use the JPA (`jakarta`) annotations
+rich feature set over many years (along with a rich set of idiosyncrasies). I will use the JPA (`jakarta`) annotations
 when it is idiomatic but I will generally prefer to learn Hibernate directly instead of by sticking strictly to the JPA
 APIs.
 
@@ -28,11 +28,13 @@ re-using the code.
 
 The sub-projects include:
 
+
 ### `basic/`
 
 A basic demo of Hibernate ORM.
 
 See the README in [basic/](basic/).
+
 
 ### `hql/`
 
@@ -40,11 +42,13 @@ An illustration of Hibernate's *Hibernate Query Language*.
 
 See the README in [hql/](hql/).
 
+
 ### `criteria/`
 
 An illustration of the Criteria API within the Jakarta Persistence API.
 
 See the README in [criteria/](criteria/).
+
 
 ### `sqlite/`
 

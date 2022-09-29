@@ -12,7 +12,7 @@ public class Util {
   public static String readClasspathResource(String path) {
     try (InputStream stream = Util.class.getResourceAsStream(path);) {
 
-      Objects.requireNonNull(stream, () -> "Classpath resource '%s' not found Did you forget the leading forward slash ('/') ?.".formatted(path));
+      Objects.requireNonNull(stream, () -> "Classpath resource '%s' not found. Did you forget the leading forward slash ('/') ?.".formatted(path));
       byte[] bytes = stream.readAllBytes();
       return new String(bytes);
     } catch (IOException e) {

@@ -52,7 +52,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE Is there a way to get a single-fetch for the join query? When you turn on SQL statement logging, Hibernate is
       making two follow up SQL queries to the `observation_types` table. I made some progress with "fetch". From some
       reading, I hope the Criteria API will save me. I was interested in this API anyway.
-* [ ] Codegen the entity classes. Can Hibernate codegen from DDL files or does it need a server? This poses a problem
+* [X] OBSOLETE (This question was investigated in the `codegen/` subproject of this repo. See it.) Codegen the entity classes. Can Hibernate codegen from DDL files or does it need a server? This poses a problem
       because we like ephemeral databases for demos.
 
 
