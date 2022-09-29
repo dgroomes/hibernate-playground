@@ -60,7 +60,7 @@ public class App {
         statement.execute(Util.readClasspathResource("/1-observations-schema.sql"));
         statement.execute(Util.readClasspathResource("/2-observations-data.sql"));
       } catch (SQLException e) {
-        throw new IllegalStateException("Unexpected error while applying the database schema", e);
+        throw new IllegalStateException("Unexpected error while applying the database schema and sample data", e);
       }
     });
   }
@@ -70,7 +70,7 @@ public class App {
    */
   private static void queryWithHql(Session session) {
     var observations = session.createQuery("select o from Observation o", Observation.class).list();
-    log.info("[Query using HQL] Found results...");
+    log.info("The HQL query found results...");
     for (var observation : observations) {
       log.info("Observation ({}): {}", observation.getId(), observation.getObservation());
     }

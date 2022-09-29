@@ -70,16 +70,16 @@ public class App {
         statement.execute(Util.readClasspathResource("/schema/3-sample-observation-types.sql"));
         statement.execute(Util.readClasspathResource("/schema/4-sample-observations.sql"));
       } catch (SQLException e) {
-        throw new IllegalStateException("Unexpected error while applying the database schema", e);
+        throw new IllegalStateException("Unexpected error while applying the database schema and sample data", e);
       }
     });
   }
 
   /**
    * Query the database using Hibernate's Criteria API.
-   *
+   * <p>
    * The Criteria API (the Jakarta-based Criteria API, not the original Hibernate-based one which it replaces) is powerful.
-   * It offers type safety and other options like fetch types. This comes at cost though. The procedural Java code that
+   * It offers type safety and other options like fetch types. This comes at a cost though. The procedural Java code that
    * it takes to use the Criteria API is not as naturally expressive as the SQL queries we have come to learn and love.
    * That's a trade-off.
    */
@@ -99,7 +99,7 @@ public class App {
     TypedQuery<Observation> query = entityManager.createQuery(criteria);
     List<Observation> observations = query.getResultList();
 
-    log.info("[Query using HQL] Found results...");
+    log.info("The Criteria-based query found results...");
     for (var observation : observations) {
       log.info("Observation (id={}, type={}): {}", observation.getId(), observation.getType().getDescription(), observation.getObservation());
     }

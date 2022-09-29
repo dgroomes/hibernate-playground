@@ -51,7 +51,7 @@ public class App {
    */
   private static void queryWithHql(Session session) {
     var observations = session.createQuery("select o from Observation o", Observation.class).list();
-    log.info("[Query using HQL] Found results...");
+    log.info("The HQL query found results...");
     for (var observation : observations) {
       log.info("Observation ({}): {}", observation.getId(), observation.getObservation());
     }

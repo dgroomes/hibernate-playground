@@ -66,9 +66,9 @@ Follow these instructions to run the demo:
      ❯ ./gradlew run
      
      > Task :run
-     11:58:16 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     11:58:16 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-     11:58:17 [main] DEBUG org.hibernate.SQL - 
+     22:41:00 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     22:41:00 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+     22:41:01 [main] DEBUG org.hibernate.SQL - 
          /* <criteria> */ select
              o1_0.id,
              o1_0.observation,
@@ -79,10 +79,10 @@ Follow these instructions to run the demo:
          join
              public.observation_types o2_0 
                  on o2_0.id=o1_0.type
-     11:58:17 [main] INFO dgroomes.App - [Query using HQL] Found results...
-     11:58:17 [main] INFO dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
-     11:58:17 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
-     11:58:17 [main] INFO dgroomes.App - 
+     22:41:01 [main] INFO dgroomes.App - The Criteria-based query found results...
+     22:41:01 [main] INFO dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
+     22:41:01 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
+     22:41:01 [main] INFO dgroomes.App -
      ```
 6. Stop the database:
     * ```shell

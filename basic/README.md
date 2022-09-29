@@ -20,14 +20,14 @@ Follow these instructions to run the demo:
    * Altogether, it should look like this:
      ```text
      $ ./gradlew run
-     
+
      > Task :run
-     13:11:08 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     13:11:09 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-     13:11:10 [main] INFO dgroomes.App - [Query using HQL] Found results...
-     13:11:10 [main] INFO dgroomes.App - Observation (1): The sky is blue
-     13:11:10 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
-     13:11:10 [main] INFO dgroomes.App - 
+     22:38:58 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     22:38:58 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+     22:38:59 [main] INFO dgroomes.App - The HQL query found results...
+     22:38:59 [main] INFO dgroomes.App - Observation (1): The sky is blue
+     22:38:59 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
+     22:38:59 [main] INFO dgroomes.App -
      ```
 
 

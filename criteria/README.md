@@ -25,9 +25,9 @@ Follow these instructions to run the demo:
      $ ./gradlew run
      
      > Task :run
-     17:25:55 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     17:25:55 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-     17:25:56 [main] DEBUG org.hibernate.SQL - 
+     22:39:59 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     22:39:59 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+     22:40:00 [main] DEBUG org.hibernate.SQL - 
          /* <criteria> */ select
              o1_0.id,
              o1_0.observation,
@@ -38,10 +38,10 @@ Follow these instructions to run the demo:
          join
              observation_types t1_0 
                  on t1_0.id=o1_0.type
-     17:25:56 [main] INFO dgroomes.App - [Query using HQL] Found results...
-     17:25:56 [main] INFO dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
-     17:25:56 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
-     17:25:56 [main] INFO dgroomes.App -
+     22:40:00 [main] INFO dgroomes.App - The Criteria-based query found results...
+     22:40:00 [main] INFO dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
+     22:40:00 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
+     22:40:00 [main] INFO dgroomes.App -
      ```
 
 

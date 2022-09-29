@@ -79,7 +79,7 @@ public class App {
     TypedQuery<Observations> query = entityManager.createQuery(criteria);
     List<Observations> observations = query.getResultList();
 
-    log.info("[Query using HQL] Found results...");
+    log.info("The Criteria-based query found results...");
     for (var observation : observations) {
       log.info("Observation (id={}, type={}): {}", observation.getId(), observation.getObservationTypes().getDescription(), observation.getObservation());
     }

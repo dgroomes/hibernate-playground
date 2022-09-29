@@ -68,7 +68,7 @@ public class App {
         statement.execute(Util.readClasspathResource("/schema/3-sample-observation-types.sql"));
         statement.execute(Util.readClasspathResource("/schema/4-sample-observations.sql"));
       } catch (SQLException e) {
-        throw new IllegalStateException("Unexpected error while applying the database schema", e);
+        throw new IllegalStateException("Unexpected error while applying the database schema and sample data", e);
       }
     });
   }
@@ -84,7 +84,7 @@ public class App {
    */
   private static void queryWithHql(Session session) {
     var observations = session.createQuery("select o from Observation o join fetch ObservationType ot", Observation.class).list();
-    log.info("[Query using HQL] Found results...");
+    log.info("The HQL query found results...");
     for (var observation : observations) {
       log.info("Observation (id={}, type={}): {}", observation.getId(), observation.getType().getDescription(), observation.getObservation());
     }
