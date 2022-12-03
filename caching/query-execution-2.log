@@ -1,9 +1,9 @@
-15:56:13 [main] INFO  dgroomes.App - Execute the same query a second time...
-15:56:13 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.Observation#1]
-15:56:13 [main] TRACE o.h.e.i.DefaultLoadEventListener - Attempting to resolve: [dgroomes.db.Observation#1]
-15:56:13 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
-15:56:13 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
-15:56:13 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
-15:56:13 [main] INFO  dgroomes.App - The query found ...
-15:56:13 [main] INFO  dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
-15:56:13 [main] INFO  dgroomes.App -
+17:55:27 [main] INFO  dgroomes.InteractionSimulator - Execute the same query a second time...
+17:55:27 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.Observation#1]
+17:55:27 [main] TRACE o.h.e.i.DefaultLoadEventListener - Attempting to resolve: [dgroomes.db.Observation#1]
+17:55:27 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
+17:55:27 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+17:55:27 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+17:55:27 [main] INFO  dgroomes.InteractionSimulator - The query found ...
+17:55:27 [main] INFO  dgroomes.InteractionSimulator - Observation (id=1, type=Uninteresting observation): The sky is blue
+17:55:27 [main] INFO  dgroomes.InteractionSimulator -
