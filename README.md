@@ -38,7 +38,7 @@ See the README in [basic/](basic/).
 
 ### `hql/`
 
-An illustration of Hibernate's *Hibernate Query Language*.
+An illustration of Hibernate's *Hibernate Query Language* (HQL).
 
 See the README in [hql/](hql/).
 
@@ -69,6 +69,9 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE Consider splitting `joins/` into subprojects `hql/` and `criteria/`. This way, we can contrast the differences more easily.
       Specifically, I want to contrast the "N + 1 selection problem". With the Criteria API, we have the option to get
       a nice "full fetch". But with HQL, we are stuck with subsequent fetches.
+* [ ] Create a `caching/` project. I want to learn second-level caching. This is an advanced topic and I know it is full
+  of pitfalls. I want to explore it in a controlled environment and understand how I can leverage second-level caching
+  for read-heavy systems that can tolerate minutes/hours/days duration of stale data.
 
 
 ## Reference

@@ -1,6 +1,6 @@
 # hql
 
-An illustration of Hibernate's *Hibernate Query Language*.
+An illustration of Hibernate's *Hibernate Query Language* (HQL).
 
 
 ## Description
@@ -36,3 +36,13 @@ Follow these instructions to run the demo:
      22:41:48 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
      22:41:48 [main] INFO dgroomes.App -
      ```
+3. Try it again with `debug`-level logging
+   * Edit the `src/main/resources/simplelogger.properties` file and uncomment the following line.
+   * ```
+     #org.slf4j.simpleLogger.log.org.hibernate.SQL=debug
+     ```
+   * Run the program again using the same command as before.
+   * Notice the additional logging (screenshot). Specifically, the program issues three SQL statements to the H2 database.
+     This is interesting because the program expresses only one HQL query. So, why did this result in three SQL queries?
+     Read the official Hibernate and JPA docs to continue your learning, and always remember that logging and is your friend.
+   * ![Screenshot of the program output](./screenshot.png)
