@@ -50,6 +50,15 @@ An illustration of the Criteria API within the Jakarta Persistence API.
 See the README in [criteria/](criteria/).
 
 
+### `caching/`
+
+NOT YET IMPLEMENTED
+
+Supporting read-heavy applications with Hibernate's *second-level caching* feature.
+
+See the README in [caching/](caching/).
+
+
 ### `sqlite/`
 
 Connect Hibernate to a SQLite database.

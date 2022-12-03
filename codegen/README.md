@@ -47,7 +47,7 @@ Follow these instructions to run the demo:
     * ```shell
       docker-compose up --renew-anon-volumes --detach
       ```
-    * This will start the dataabse and initialize the schema and sample data.
+    * This will start the database and initialize the schema and sample data.
 3. Use Java 17
 4. Codegen the entity classes
    * This step is only needed if you have changed the database schema. For example, if you added a new column to an
