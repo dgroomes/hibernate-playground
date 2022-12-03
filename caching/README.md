@@ -38,7 +38,8 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE Drop Criteria and just use simple `EntityManager#getReference` calls. This is more focused than the "find all"
   approach I was doing (I think).
 * [x] DONE (That worked. I didn't commit the change though) Try to break the caching behavior by using `EntityManager#clear`.
-* [ ] What is the expected use case of the session? (And, if I understand correctly, this is the same question as "What
+* [ ] Try two different sessions?
+* [x] DONE (The [Hibernate docs](https://docs.jboss.org/hibernate/orm/6.1/userguide/html_single/Hibernate_User_Guide.html#architecture-current-session) explain it well. Usually a session is used for a user-driven action, but can also be used as user-level "conversations", and beyond that you can even misuse sessions like the 'session-per-application' anti-pattern) What is the expected use case of the session? (And, if I understand correctly, this is the same question as "What
   is the expected use case of the second-level cache?"). Is it only meant to serve a one-shot workflow, like a transactional
   workflow? Or, can you truly cache things in the traditional sense. Where a cached object serves later requests, where
   these requests are made by totally different users?
