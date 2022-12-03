@@ -1,8 +1,6 @@
 # caching
 
-NOT YET IMPLEMENTED
-
-Supporting read-heavy applications with Hibernate's *second-level caching* feature.
+Illustrating Hibernate's caching behavior by focussing on trace-level logs.
 
 
 ## Description
@@ -10,7 +8,12 @@ Supporting read-heavy applications with Hibernate's *second-level caching* featu
 How exactly does Hibernate hold onto data? When does Hibernate decide to re-fetch data? When does Hibernate decide to
 throw an exception because the data is too stale? I don't even know the right questions to ask. I just need to start
 exploring and understanding this topic. This is an example project that aims to shine a bright light on the behavior
-of Hibernate's caching behavior by supplying a top-down example Java program with SQL-statement logging. 
+of Hibernate's caching behavior by supplying a top-down example Java program with SQL-statement logging.
+
+This example leans on logging to illuminate the going-ons of Hibernate's behavior. Please be diligent and patient as
+you read the logs. Our eyes often glaze over when looking at the overwhelming wall of framework logs. Especially as your
+usage of Hibernate extends into features like HQL, the Criteria API and other things, the logs become obtuse. But, if
+you can be patient, you will be rewarded with a deeper understanding of how Hibernate works.
 
 
 ## Instructions
@@ -22,12 +25,22 @@ Follow these instructions to run the demo:
    * ```shell
      ./gradlew run
      ```
-   * Altogether, it should look like this:
-     ```text
-     $ ./gradlew run
-     
-     ... TODO ...
-     ```
+3. Observe the logs
+   * You'll notice that Hibernate makes only one SQL request to the database even though the program made two `EntityManager#getReference`
+     calls. This is because the object was in the session cache. Specifically, see the following log lines.
+   * > 14:53:12 [main] TRACE o.h.e.i.DefaultLoadEventListener - Entity proxy found in session cache
+
+
+## WishList
+
+General clean-ups, TODOs and things I wish to implement for this project:
+
+* [x] DONE Drop Criteria and just use simple `EntityManager#getReference` calls. This is more focused than the "find all"
+  approach I was doing (I think).
+* [ ] What is the expected use case of the session? (And, if I understand correctly, this is the same question as "What
+  is the expected use case of the second-level cache?"). Is it only meant to serve a one-shot workflow, like a transactional
+  workflow? Or, can you truly cache things in the traditional sense. Where a cached object serves later requests, where
+  these requests are made by totally different users?
 
 
 ## Reference

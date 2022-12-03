@@ -52,9 +52,7 @@ See the README in [criteria/](criteria/).
 
 ### `caching/`
 
-NOT YET IMPLEMENTED
-
-Supporting read-heavy applications with Hibernate's *second-level caching* feature.
+Illustrating Hibernate's caching behavior by focussing on trace-level logs.
 
 See the README in [caching/](caching/).
 

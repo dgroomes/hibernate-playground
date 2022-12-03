@@ -1,0 +1,9 @@
+14:53:12 [main] INFO  dgroomes.App - Execute the same query a second time...
+14:53:12 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.Observation#1]
+14:53:12 [main] TRACE o.h.e.i.DefaultLoadEventListener - Entity proxy found in session cache
+14:53:12 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
+14:53:12 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+14:53:12 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+14:53:12 [main] INFO  dgroomes.App - The query found ...
+14:53:12 [main] INFO  dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
+14:53:12 [main] INFO  dgroomes.App -
