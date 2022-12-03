@@ -82,7 +82,7 @@ public class App {
   }
 
   private static void query(EntityManager entityManager) {
-    Observation observation = entityManager.getReference(Observation.class, 1L);
+    Observation observation = entityManager.find(Observation.class, 1L);
 
     log.info("The query found ...");
     log.info("Observation (id={}, type={}): {}", observation.getId(), observation.getType().getDescription(), observation.getObservation());

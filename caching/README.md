@@ -26,7 +26,7 @@ Follow these instructions to run the demo:
      ./gradlew run
      ```
 3. Observe the logs
-   * You'll notice that Hibernate makes only one SQL request to the database even though the program made two `EntityManager#getReference`
+   * You'll notice that Hibernate makes only one SQL request to the database even though the program made two `EntityManager#find`
      calls. This is because the object was in the session cache. Specifically, see the following log lines.
    * > 14:53:12 [main] TRACE o.h.e.i.DefaultLoadEventListener - Entity proxy found in session cache
 
