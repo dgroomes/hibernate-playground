@@ -37,7 +37,8 @@ public class App {
 
       // Simulate user interactions. This is the interesting part.
       InteractionSimulator interactionSimulator = new InteractionSimulator(entityManagerFactory);
-      interactionSimulator.queryEntityTwice();
+      interactionSimulator.querySameEntityTwiceBySameUser();
+      interactionSimulator.querySameEntityByTwoUsers();
 
       // Quiet the logs again.
       rootLog.setLevel(Level.WARN);
