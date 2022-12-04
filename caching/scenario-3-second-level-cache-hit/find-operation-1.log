@@ -1,0 +1,93 @@
+21:15:58 [main] INFO  dgroomes.App - Scenario 3: 'second-level cache hit'
+21:15:58 [main] TRACE o.h.i.SessionFactoryImpl$SessionBuilderImpl - Opening Hibernate Session.  tenant=null
+21:15:58 [main] TRACE org.hibernate.internal.SessionImpl - Opened Session [a4af2254-2de7-49a0-89e7-f158f13d44ab] at timestamp: 6840826916061184
+21:15:58 [main] INFO  dgroomes.InteractionSimulator - Executing a 'find' operation for user 1 ...
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.Observation#1]
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Attempting to resolve: [dgroomes.db.Observation#1]
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Getting cached data from region [`dgroomes.db.Observation` (AccessType[read-write])] by key [dgroomes.db.Observation#1]
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Cache miss : region = `dgroomes.db.Observation`, key = `dgroomes.db.Observation#1`
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Object not resolved in any cache: [dgroomes.db.Observation#1]
+21:15:58 [main] TRACE o.h.p.entity.AbstractEntityPersister - Fetching entity: [dgroomes.db.Observation#1]
+21:15:58 [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+21:15:58 [main] TRACE org.hibernate.orm.results - Registering initializer : EntityJoinedFetchInitializer(dgroomes.db.Observation.type)
+21:15:58 [main] TRACE org.hibernate.orm.results - Registering initializer : EntityResultInitializer(dgroomes.db.Observation)
+21:15:58 [main] DEBUG org.hibernate.orm.results - Initializer list
+21:15:58 [main] DEBUG org.hibernate.orm.results -     dgroomes.db.Observation.type -> EntityJoinedFetchInitializer(dgroomes.db.Observation.type)@1946917456 (ToOneAttributeMapping(NavigableRole[dgroomes.db.Observation.type])@1683617002)
+21:15:58 [main] DEBUG org.hibernate.orm.results -     dgroomes.db.Observation -> EntityResultInitializer(dgroomes.db.Observation)@1198513669 (SingleTableEntityPersister(dgroomes.db.Observation))
+21:15:58 [main] TRACE o.h.s.r.j.i.DeferredResultSetAccess - Executing query to retrieve ResultSet : select o1_0.id,o1_0.observation,t1_0.id,t1_0.description from observations o1_0 left join observation_types t1_0 on t1_0.id=o1_0.type where o1_0.id=?
+21:15:58 [main] DEBUG org.hibernate.SQL -
+    select
+        o1_0.id,
+        o1_0.observation,
+        t1_0.id,
+        t1_0.description
+    from
+        observations o1_0
+    left join
+        observation_types t1_0
+            on t1_0.id=o1_0.type
+    where
+        o1_0.id=?
+[Hibernate]
+    select
+        o1_0.id,
+        o1_0.observation,
+        t1_0.id,
+        t1_0.description
+    from
+        observations o1_0
+    left join
+        observation_types t1_0
+            on t1_0.id=o1_0.type
+    where
+        o1_0.id=?
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Registering statement [prep3: select o1_0.id,o1_0.observation,t1_0.id,t1_0.description from observations o1_0 left join observation_types t1_0 on t1_0.id=o1_0.type where o1_0.id=?]
+21:15:58 [main] TRACE org.hibernate.orm.jdbc.bind - binding parameter [1] as [INTEGER] - [1]
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Registering result set [rs11: org.h2.result.LocalResult@7ac48e10 columns: 4 rows: 1 pos: -1]
+21:15:58 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterStatement
+21:15:58 [main] TRACE org.hibernate.orm.jdbc.extract - extracted value ([1] : [INTEGER]) - [1]
+21:15:58 [main] TRACE org.hibernate.orm.jdbc.extract - extracted value ([2] : [VARCHAR]) - [The sky is blue]
+21:15:58 [main] TRACE org.hibernate.orm.jdbc.extract - extracted value ([3] : [INTEGER]) - [1]
+21:15:58 [main] TRACE org.hibernate.orm.jdbc.extract - extracted value ([4] : [VARCHAR]) - [Uninteresting observation]
+21:15:58 [main] TRACE org.hibernate.orm.results.loading - StandardRowReader#readRow
+21:15:58 [main] TRACE o.h.orm.results.loading.entity - (o.h.s.r.g.e.i.EntityJoinedFetchInitializer) Beginning Initializer#resolveKey process for entity : dgroomes.db.Observation.type
+21:15:58 [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [1]
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (EntityJoinedFetchInitializer) Hydrated EntityKey (dgroomes.db.Observation.type): 1
+21:15:58 [main] TRACE o.h.orm.results.loading.entity - (o.h.s.r.g.e.i.EntityResultInitializer) Beginning Initializer#resolveKey process for entity : dgroomes.db.Observation
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (dgroomes.db.Observation): 1
+21:15:58 [main] TRACE o.h.orm.results.loading.entity - (o.h.s.r.g.e.i.EntityJoinedFetchInitializer) Beginning Initializer#resolveInstance process for entity (dgroomes.db.Observation.type) : 1
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (EntityJoinedFetchInitializer) Created new entity instance [dgroomes.db.Observation.type#1] : dgroomes.db.ObservationType@6b1321b7
+21:15:58 [main] TRACE o.h.orm.results.loading.entity - (o.h.s.r.g.e.i.EntityResultInitializer) Beginning Initializer#resolveInstance process for entity (dgroomes.db.Observation) : 1
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [dgroomes.db.Observation#1] : dgroomes.db.Observation@342ee097
+21:15:58 [main] TRACE o.h.orm.results.loading.entity - (EntityJoinedFetchInitializer) Beginning Initializer#initializeInstance process for entity dgroomes.db.Observation.type#1
+21:15:58 [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Uninteresting observation]
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (ENTITYJOINEDFETCHINITIALIZER) Adding entityInstance to second-level cache: dgroomes.db.Observation.type#1
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Caching data from load [region=`dgroomes.db.ObservationType` (AccessType[read-write])] : key[dgroomes.db.ObservationType#1] -> value[CacheEntry(dgroomes.db.ObservationType)]
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (EntityJoinedFetchInitializer) Done materializing entityInstance : dgroomes.db.Observation.type#1
+21:15:58 [main] TRACE o.h.orm.results.loading.entity - (EntityResultInitializer) Beginning Initializer#initializeInstance process for entity dgroomes.db.Observation#1
+21:15:58 [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [The sky is blue]
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (EntityJoinedFetchInitializer) Found existing loading entry [dgroomes.db.Observation.type#1] - using loading instance
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (ENTITYRESULTINITIALIZER) Adding entityInstance to second-level cache: dgroomes.db.Observation#1
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Caching data from load [region=`dgroomes.db.Observation` (AccessType[read-write])] : key[dgroomes.db.Observation#1] -> value[CacheEntry(dgroomes.db.Observation)]
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : dgroomes.db.Observation#1
+21:15:58 [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@5dbab232
+21:15:58 [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Found existing loading entry [dgroomes.db.Observation#1] - using loading instance
+21:15:58 [main] TRACE org.hibernate.orm.results.loading - StandardRowReader#afterRow
+21:15:58 [main] TRACE o.h.s.r.j.i.JdbcValuesSourceProcessingStateStandardImpl - Total objects hydrated: 2
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing result set [rs11: org.h2.result.LocalResult@7ac48e10 columns: 4 rows: 1 pos: 1]
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Closing result set [rs11: org.h2.result.LocalResult@7ac48e10 columns: 4 rows: 1 pos: 1]
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing statement [prep3: select o1_0.id,o1_0.observation,t1_0.id,t1_0.description from observations o1_0 left join observation_types t1_0 on t1_0.id=o1_0.type where o1_0.id=? {1: 1}]
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Closing prepared statement [prep3: select o1_0.id,o1_0.observation,t1_0.id,t1_0.description from observations o1_0 left join observation_types t1_0 on t1_0.id=o1_0.type where o1_0.id=? {1: 1}]
+21:15:58 [main] TRACE o.h.e.i.StatefulPersistenceContext - Initializing non-lazy collections
+21:15:58 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+21:15:58 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+21:15:58 [main] INFO  dgroomes.InteractionSimulator - Found ...
+21:15:58 [main] INFO  dgroomes.InteractionSimulator - Observation (id=1, type=Uninteresting observation): The sky is blue
+21:15:58 [main] INFO  dgroomes.InteractionSimulator -
+21:15:58 [main] TRACE org.hibernate.internal.SessionImpl - Closing session [a4af2254-2de7-49a0-89e7-f158f13d44ab]
+21:15:58 [main] TRACE o.h.e.j.internal.JdbcCoordinatorImpl - Closing JDBC container [org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl@595f9916]
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+21:15:58 [main] TRACE o.h.r.j.i.LogicalConnectionManagedImpl - Closing logical connection
+21:15:58 [main] TRACE o.h.r.j.i.LogicalConnectionManagedImpl - Logical connection closed

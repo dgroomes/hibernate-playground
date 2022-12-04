@@ -5,9 +5,9 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
     http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
         version="1.0">
-    <persistence-unit name="hibernate-playground-criteria">
 
-        <!-- There has to be a better way than listing each class... -->
+    <persistence-unit name="without-second-level-caching">
+
         <class>dgroomes.db.Observation</class>
         <class>dgroomes.db.ObservationType</class>
 
@@ -19,6 +19,34 @@
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.highlight_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="with-second-level-caching">
+
+        <class>dgroomes.db.Observation</class>
+        <class>dgroomes.db.ObservationType</class>
+
+        <properties>
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:h2:mem:hibernateplayground"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.highlight_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.region.factory_class" value="jcache"/>
+            <property name="hibernate.javax.cache.provider" value="com.github.benmanes.caffeine.jcache.spi.CaffeineCachingProvider"/>
+            <!--
+            The 'jakarta.persistence.sharedCache.mode' property is not auto-completing for me in Intellij. But this is a
+            legitimate property. See the docs: https://docs.jboss.org/hibernate/orm/6.1/userguide/html_single/Hibernate_User_Guide.html#caching-mappings
+
+            Using the value 'ALL' will make all entity types cacheable. This is a convenient configuration for this project
+            because it means we don't have to hardcode the '@Cacheable' annotation directly on the classes.
+            -->
+            <property name="jakarta.persistence.sharedCache.mode" value="ALL"/>
         </properties>
     </persistence-unit>
 </persistence>

@@ -7,7 +7,6 @@
         version="1.0">
     <persistence-unit name="hibernate-playground-criteria">
 
-        <!-- There has to be a better way than listing each class... -->
         <class>dgroomes.db.Observations</class>
         <class>dgroomes.db.ObservationTypes</class>
 

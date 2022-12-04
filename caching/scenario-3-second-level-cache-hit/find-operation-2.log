@@ -1,0 +1,30 @@
+21:15:58 [main] INFO  dgroomes.InteractionSimulator - Executing the same 'find' operation for user 2 ...
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.Observation#1]
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Attempting to resolve: [dgroomes.db.Observation#1]
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Getting cached data from region [`dgroomes.db.Observation` (AccessType[read-write])] by key [dgroomes.db.Observation#1]
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Checking readability of read-write cache item [timestamp=`6840826916061184`, version=`null`] : txTimestamp=`6840826916114432`
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Cache hit : region = `dgroomes.db.Observation`, key = `dgroomes.db.Observation#1`
+21:15:58 [main] TRACE o.h.l.entity.CacheEntityLoaderHelper - Converting second-level cache entry [CacheEntry(dgroomes.db.Observation)] into entity : [dgroomes.db.Observation#1]
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.ObservationType#1]
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Attempting to resolve: [dgroomes.db.ObservationType#1]
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Getting cached data from region [`dgroomes.db.ObservationType` (AccessType[read-write])] by key [dgroomes.db.ObservationType#1]
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Checking readability of read-write cache item [timestamp=`6840826916061184`, version=`null`] : txTimestamp=`6840826916114432`
+21:15:58 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Cache hit : region = `dgroomes.db.ObservationType`, key = `dgroomes.db.ObservationType#1`
+21:15:58 [main] TRACE o.h.l.entity.CacheEntityLoaderHelper - Converting second-level cache entry [CacheEntry(dgroomes.db.ObservationType)] into entity : [dgroomes.db.ObservationType#1]
+21:15:58 [main] TRACE o.h.l.entity.CacheEntityLoaderHelper - Cached Version : null
+21:15:58 [main] TRACE o.h.e.i.StatefulPersistenceContext - Initializing non-lazy collections
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Resolved object in second-level cache: [dgroomes.db.ObservationType#1]
+21:15:58 [main] TRACE o.h.l.entity.CacheEntityLoaderHelper - Cached Version : null
+21:15:58 [main] TRACE o.h.e.i.StatefulPersistenceContext - Initializing non-lazy collections
+21:15:58 [main] TRACE o.h.e.i.DefaultLoadEventListener - Resolved object in second-level cache: [dgroomes.db.Observation#1]
+21:15:58 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+21:15:58 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+21:15:58 [main] INFO  dgroomes.InteractionSimulator - Found ...
+21:15:58 [main] INFO  dgroomes.InteractionSimulator - Observation (id=1, type=Uninteresting observation): The sky is blue
+21:15:58 [main] INFO  dgroomes.InteractionSimulator -
+21:15:58 [main] TRACE org.hibernate.internal.SessionImpl - Closing session [ea19e45d-e541-4856-949f-d82db4e5bd67]
+21:15:58 [main] TRACE o.h.e.j.internal.JdbcCoordinatorImpl - Closing JDBC container [org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl@78d73b1b]
+21:15:58 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+21:15:58 [main] TRACE o.h.r.j.i.LogicalConnectionManagedImpl - Closing logical connection
+21:15:58 [main] TRACE o.h.r.j.i.LogicalConnectionManagedImpl - Logical connection closed

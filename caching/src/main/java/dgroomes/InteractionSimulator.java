@@ -25,42 +25,34 @@ public class InteractionSimulator {
   }
 
   /**
-   * Simulate a request by a user that queries for the same entity twice. The effect of this is that the second query
-   * engages the first-level cache. This will result in a "cache hit" for the entity.
+   * Simulate a request by a user that does a look-up for an entity; and then does the same look-up a second time in the
+   * same session.
    */
-  public void querySameEntityTwiceBySameUser() {
-    log.info("[querySameEntityTwiceBySameUser]");
-
+  public void findSameEntityTwiceSameSession() {
     EntityManager entityManager = null;
     try {
       entityManager = entityManagerFactory.createEntityManager();
 
-      log.info("Executing a query...");
-      // Will Hibernate cache the results? We will see...
-      query(entityManager);
+      log.info("Executing a 'find' operation...");
+      find(entityManager);
 
-      log.info("Execute the same query a second time...");
-      // Is there any entity data from the previous query in Hibernate's caching system? Will Hibernate use this cached
-      // data? We're in the same session so first-level should work. Remember, an EntityManager represents a session.
-      query(entityManager);
+      log.info("Executing the same 'find' operation a second time...");
+      find(entityManager);
     } finally {
       Optional.ofNullable(entityManager).ifPresent(EntityManager::close);
     }
   }
 
   /**
-   * Simulate two requests. The first request is by a user that queries for an entity. The second request is by a different
-   * user that queries for the same entity. The effect of this is that there will be two different sessions: one for
-   * each user. The first-level cache should not be engaged. This will result in a "cache miss" for the entity.
+   * Simulate two user requests. The first request does a look-up for an entity. The second request occurs in a different
+   * session and does a look-up for the same entity.
    */
-  public void querySameEntityByTwoUsers() {
-    log.info("[querySameEntityByTwoUsers]");
-
+  public void findSameEntityTwiceTwoSessions() {
     EntityManager entityManager = null;
     try {
       entityManager = entityManagerFactory.createEntityManager();
-      log.info("Executing a query for user 1 ...");
-      query(entityManager);
+      log.info("Executing a 'find' operation for user 1 ...");
+      find(entityManager);
     } finally {
       Optional.ofNullable(entityManager).ifPresent(EntityManager::close);
     }
@@ -69,17 +61,17 @@ public class InteractionSimulator {
     try {
       entityManager = entityManagerFactory.createEntityManager();
 
-      log.info("Executing a query for user 2 ...");
-      query(entityManager);
+      log.info("Executing the same 'find' operation for user 2 ...");
+      find(entityManager);
     } finally {
       Optional.ofNullable(entityManager).ifPresent(EntityManager::close);
     }
   }
 
-  private static void query(EntityManager entityManager) {
+  private static void find(EntityManager entityManager) {
     Observation observation = entityManager.find(Observation.class, 1L);
 
-    log.info("The query found ...");
+    log.info("Found ...");
     log.info("Observation (id={}, type={}): {}", observation.getId(), observation.getType().getDescription(), observation.getObservation());
     log.info("");
   }

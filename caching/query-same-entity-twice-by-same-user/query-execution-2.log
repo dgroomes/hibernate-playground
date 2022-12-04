@@ -1,9 +1,0 @@
-18:04:30 [main] INFO  dgroomes.InteractionSimulator - Execute the same query a second time...
-18:04:30 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.Observation#1]
-18:04:30 [main] TRACE o.h.e.i.DefaultLoadEventListener - Attempting to resolve: [dgroomes.db.Observation#1]
-18:04:30 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
-18:04:30 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
-18:04:30 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
-18:04:30 [main] INFO  dgroomes.InteractionSimulator - The query found ...
-18:04:30 [main] INFO  dgroomes.InteractionSimulator - Observation (id=1, type=Uninteresting observation): The sky is blue
-18:04:30 [main] INFO  dgroomes.InteractionSimulator -
