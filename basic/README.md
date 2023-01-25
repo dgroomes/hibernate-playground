@@ -84,7 +84,7 @@ I was assuming `MetadataSources.addPackage` would work, but it didn't. I also ca
 which worked.
 
 
-## WishList
+## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 

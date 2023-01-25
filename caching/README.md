@@ -44,7 +44,7 @@ Follow these instructions to run the demo:
      > 20:20:23 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Cache hit : region = `dgroomes.db.Observation`, key = `dgroomes.db.Observation#1`
 
 
-## WishList
+## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 

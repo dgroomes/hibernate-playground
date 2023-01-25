@@ -45,7 +45,7 @@ Follow these instructions to run the demo:
      ```
 
 
-## WishList
+## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
