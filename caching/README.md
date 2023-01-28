@@ -11,7 +11,7 @@ exploring and understanding this topic. This is an example project that aims to 
 of Hibernate's caching behavior by supplying a top-down example Java program with SQL-statement logging.
 
 This example leans on logging to illuminate the going-ons of Hibernate's behavior. Please be diligent and patient as
-you read the logs. Our eyes often glaze over when looking at the overwhelming wall of framework logs. Especially as your
+you read the logs. Our eyes often glaze over when looking at an overwhelming wall of framework logs. Especially as your
 usage of Hibernate extends into features like HQL, the Criteria API and other things, the logs become obtuse. But, if
 you can be patient, you will be rewarded with a deeper understanding of how Hibernate works.
 
@@ -27,8 +27,7 @@ Follow these instructions to run the demo:
      ```
 3. Observe the logs
    * Specifically, get an understanding of the simulation scenarios written in the Java code and map the execution of
-     these scenarios to the log output. You'll notice three distinct scenarios: 1) A **first-level cache hit**
-     2) a **first-level cache miss** and 3) a **second-level cache hit** 
+     these scenarios to the log output. You'll notice three distinct scenarios: 1) A **first-level cache hit** 2) a **first-level cache miss** and 3) a **second-level cache hit** 
    * You'll notice that in the first-level cache hit scenario, Hibernate makes only one SQL request to the database even
      though the program made two `EntityManager#find` calls. This is because the scenario executed over only one session
      and the object was cached in the first-level (session) cache.

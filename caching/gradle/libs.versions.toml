@@ -1,0 +1,24 @@
+[versions]
+# SLF4J releases: http://www.slf4j.org/news.html
+slf4j = "2.0.6"
+
+# Logback releases: http://logback.qos.ch/download.html
+logback = "1.4.5"
+
+# H2 releases: https://github.com/h2database/h2database/releases
+h2 = "2.1.214"
+
+# Hibernate ORM releases: https://hibernate.org/orm/releases/
+hibernate = "6.1.6.Final"
+
+# Caffeine releases: https://github.com/ben-manes/caffeine/releases
+caffeine = "3.1.2"
+
+
+[libraries]
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+h2 = { module = "com.h2database:h2", version.ref = "h2" }
+hibernate-core = { module = "org.hibernate.orm:hibernate-core", version.ref = "hibernate" }
+hibernate-jcache = { module = "org.hibernate.orm:hibernate-jcache", version.ref = "hibernate" }
+caffeine-jcache = { module = "com.github.ben-manes.caffeine:jcache", version.ref = "caffeine" }

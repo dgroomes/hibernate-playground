@@ -15,25 +15,25 @@ import java.util.Optional;
  */
 public class App {
 
-  private static final Logger rootLog = (Logger) LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME);
+  private static final Logger hibernateLog = (Logger) LoggerFactory.getLogger("org.hibernate");
   private static final org.slf4j.Logger log = LoggerFactory.getLogger(App.class);
 
   public static void main(String[] args) {
     // Purposely quiet down the Hibernate logs during the bootstrapping phase. The Hibernate framework has lots and lots
     // of log statements, which is great for debugging, but we're not interested in debugging the bootstrap phase. We're
     // interested in peering into Hibernate when it's executing an application query.
-    rootLog.setLevel(Level.WARN);
+    hibernateLog.setLevel(Level.WARN);
 
     EntityManagerFactory emf = null;
     try {
-      emf = boostrapJakartaPersistence("without-second-level-caching");
+      emf = bootstrapJakartaPersistence("without-second-level-caching");
 
       var sessionFactory = emf.unwrap(SessionFactory.class);
 
       applySchema(sessionFactory);
-      // The boostrap phase is over. Let's amp up the Hibernate logs so we can see Hibernate do it's thing when it
+      // The bootstrap phase is over. Let's amp up the Hibernate logs so we can see Hibernate do it's thing when it
       // executes application queries.
-      rootLog.setLevel(Level.TRACE);
+      hibernateLog.setLevel(Level.TRACE);
 
       // Simulate user interactions. This is the interesting part.
       InteractionSimulator interactionSimulator = new InteractionSimulator(emf);
@@ -43,7 +43,7 @@ public class App {
       interactionSimulator.findSameEntityTwiceTwoSessions();
 
       // Quiet the logs again.
-      rootLog.setLevel(Level.WARN);
+      hibernateLog.setLevel(Level.WARN);
     } finally {
       Optional.ofNullable(emf).ifPresent(EntityManagerFactory::close);
     }
@@ -51,18 +51,18 @@ public class App {
     // Now, repeat a similar experiment but wire a second-level cache into the Hibernate software machinery.
     emf = null;
     try {
-      emf = boostrapJakartaPersistence("with-second-level-caching");
+      emf = bootstrapJakartaPersistence("with-second-level-caching");
 
       var sessionFactory = emf.unwrap(SessionFactory.class);
 
       applySchema(sessionFactory);
-      rootLog.setLevel(Level.TRACE);
+      hibernateLog.setLevel(Level.TRACE);
 
       InteractionSimulator interactionSimulator = new InteractionSimulator(emf);
       log.info("Scenario 3: 'second-level cache hit'");
       interactionSimulator.findSameEntityTwiceTwoSessions();
 
-      rootLog.setLevel(Level.WARN);
+      hibernateLog.setLevel(Level.WARN);
     } finally {
       Optional.ofNullable(emf).ifPresent(EntityManagerFactory::close);
     }
@@ -73,7 +73,7 @@ public class App {
    * <p>
    * For more information, read the docs: <a href="https://docs.jboss.org/hibernate/orm/6.1/userguide/html_single/Hibernate_User_Guide.html#bootstrap-jpa">link</a>
    */
-  private static EntityManagerFactory boostrapJakartaPersistence(String persistenceUnitName) {
+  private static EntityManagerFactory bootstrapJakartaPersistence(String persistenceUnitName) {
     // Make sure Hibernate uses the logging sub-system of our choice: SLF4J.
     // For information, see https://stackoverflow.com/a/19488546
     System.setProperty("org.jboss.logging.provider", "slf4j");
