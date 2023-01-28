@@ -20,7 +20,7 @@ public class App {
   private static final Logger log = LoggerFactory.getLogger(App.class);
 
   public static void main(String[] args) {
-    Metadata metadata = boostrapHibernate();
+    Metadata metadata = bootstrapHibernate();
 
     try (var sessionFactory = metadata.buildSessionFactory();
          var session = sessionFactory.openSession()) {
@@ -35,7 +35,7 @@ public class App {
    * Do all the boilerplate things to "bootstrap" Hibernate. The returned {@link Metadata} should be used to create a
    * {@link org.hibernate.SessionFactory}.
    */
-  private static Metadata boostrapHibernate() {
+  private static Metadata bootstrapHibernate() {
     // Make sure Hibernate uses the logging sub-system of our choice: SLF4J.
     // For information, see https://stackoverflow.com/a/19488546
     System.setProperty("org.jboss.logging.provider", "slf4j");
