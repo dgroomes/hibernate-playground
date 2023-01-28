@@ -1,0 +1,17 @@
+[versions]
+# SLF4J releases: http://www.slf4j.org/news.html
+slf4j = "2.0.6"
+
+# SQLite JDBC releases: https://github.com/xerial/sqlite-jdbc/releases
+sqlite = "3.36.0.3"
+
+# Hibernate ORM releases: https://hibernate.org/orm/releases/
+hibernate = "6.1.6.Final"
+
+
+[libraries]
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+sqlite = { module = "org.xerial:sqlite-jdbc", version.ref = "sqlite" }
+hibernate-core = { module = "org.hibernate.orm:hibernate-core", version.ref = "hibernate" }
+hibernate-community-dialects = { module = "org.hibernate.orm:hibernate-community-dialects", version.ref = "hibernate" }
