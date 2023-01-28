@@ -8,8 +8,8 @@ An illustration of Hibernate's *Hibernate Query Language* (HQL).
 The most uniquely impressive features of Hibernate (and other ORMs) is to turn row-based data into graph-based data (and
 vice-versa). Specifically, this means turning the row-based data in the table of a SQL database (RDBMS) into object instances
 in Java (object-to-object relationships form a graph). Across even a few tables, it would require lots of procedural code
-to accomplish something similar if you weren't using an ORM. For single-table information systems, consider using straight
-JDBC and SQL.
+to accomplish something similar if you weren't using an ORM. By contrast, for single-table information systems, consider
+using straight JDBC and SQL.
 
 HQL is a powerful language that lets you re-use your existing SQL skills and get the full benefits of Hibernate's
 object-relational mapping. This project implements a basic Java program that reads from a SQL database using HQL. 
