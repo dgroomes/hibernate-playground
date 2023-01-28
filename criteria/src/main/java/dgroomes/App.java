@@ -26,7 +26,7 @@ public class App {
   private static final Logger log = LoggerFactory.getLogger(App.class);
 
   public static void main(String[] args) {
-    EntityManagerFactory entityManagerFactory = boostrapJakartaPersistence();
+    EntityManagerFactory entityManagerFactory = bootstrapJakartaPersistence();
 
     try (var sessionFactory = entityManagerFactory.unwrap(SessionFactory.class);
          var session = sessionFactory.openSession()) {
@@ -50,7 +50,7 @@ public class App {
    * pretty nice in Intellij because Intellij is so smart about the XML config files for the big libraries and frameworks.
    * The auto-complete is nice.
    */
-  private static EntityManagerFactory boostrapJakartaPersistence() {
+  private static EntityManagerFactory bootstrapJakartaPersistence() {
     // Make sure Hibernate uses the logging sub-system of our choice: SLF4J.
     // For information, see https://stackoverflow.com/a/19488546
     System.setProperty("org.jboss.logging.provider", "slf4j");

@@ -1,24 +1,20 @@
 plugins {
     application
-    id("org.hibernate.orm") version "6.1.1.Final"
+    id("org.hibernate.orm") version "6.1.6.Final"
 }
 
 repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "1.7.36" // SLF4J releases: http://www.slf4j.org/news.html
-val h2Version = "2.1.214" // H2 releases: https://github.com/h2database/h2database/releases
-val hibernateVersion = "6.1.1.Final" // Hibernate ORM releases: https://hibernate.org/orm/releases/
-
 dependencies {
     // Generate the metamodel classes
-    annotationProcessor("org.hibernate.orm:hibernate-jpamodelgen:$hibernateVersion")
+    annotationProcessor(libs.hibernate.jpamodelgen)
 
-    implementation("org.slf4j:slf4j-api:$slf4jVersion")
-    implementation("org.slf4j:slf4j-simple:$slf4jVersion")
-    implementation("com.h2database:h2:$h2Version")
-    implementation("org.hibernate.orm:hibernate-core:$hibernateVersion")
+    implementation(libs.slf4j.api)
+    implementation(libs.slf4j.simple)
+    implementation(libs.h2)
+    implementation(libs.hibernate.core)
 }
 
 application {
