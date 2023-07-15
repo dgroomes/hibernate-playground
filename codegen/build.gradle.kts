@@ -1,6 +1,6 @@
 plugins {
     application
-    id("org.hibernate.orm") version "6.1.1.Final"
+    id("org.hibernate.orm") version "6.2.6.Final"
     id("dgroomes.hibernate-code-gen")
 }
 
@@ -8,9 +8,9 @@ repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "1.7.36" // SLF4J releases: http://www.slf4j.org/news.html
-val postgresVersion = "42.3.3" // Postgres JDBC releases: https://jdbc.postgresql.org/ and https://search.maven.org/artifact/org.postgresql/postgresql
-val hibernateVersion = "6.1.1.Final" // Hibernate ORM releases: https://hibernate.org/orm/releases/
+val slf4jVersion = "2.0.7" // SLF4J releases: http://www.slf4j.org/news.html
+val postgresVersion = "42.6.0" // Postgres JDBC releases: https://jdbc.postgresql.org/ and https://search.maven.org/artifact/org.postgresql/postgresql
+val hibernateVersion = "6.2.6.Final" // Hibernate ORM releases: https://hibernate.org/orm/releases/
 
 dependencies {
     // Generate the metamodel classes

@@ -1,5 +1,5 @@
 package dgroomes.db;
-// Generated Sep 28, 2022, 9:56:48 PM by Hibernate Tools 6.1.1.Final
+// Generated Jul 15, 2023, 12:14:27 AM by Hibernate Tools 6.2.6.Final
 
 
 import jakarta.persistence.Column;
@@ -28,11 +28,6 @@ public class ObservationTypes  implements java.io.Serializable {
     public ObservationTypes() {
     }
 
-	
-    public ObservationTypes(int id, String description) {
-        this.id = id;
-        this.description = description;
-    }
     public ObservationTypes(int id, String description, Set<Observations> observationses) {
        this.id = id;
        this.description = description;

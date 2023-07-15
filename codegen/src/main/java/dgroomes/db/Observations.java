@@ -1,5 +1,5 @@
 package dgroomes.db;
-// Generated Sep 28, 2022, 9:56:48 PM by Hibernate Tools 6.1.1.Final
+// Generated Jul 15, 2023, 12:14:27 AM by Hibernate Tools 6.2.6.Final
 
 
 import jakarta.persistence.Column;

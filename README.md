@@ -19,14 +19,14 @@ APIs.
 **NOTE**: This project was developed on macOS. It is for my own personal use.
 
 
-## Standalone sub-projects
+## Standalone subprojects
 
-This repository illustrates different concepts, patterns and examples via standalone sub-projects. Each sub-project is
-completely independent of the others and do not depend on the root project. This _standalone sub-project constraint_
-forces the sub-projects to be complete and maximizes the reader's chances of successfully running, understanding, and
+This repository illustrates different concepts, patterns and examples via standalone subprojects. Each subproject is
+completely independent of the others and do not depend on the root project. This _standalone subproject constraint_
+forces the subprojects to be complete and maximizes the reader's chances of successfully running, understanding, and
 re-using the code.
 
-The sub-projects include:
+The subprojects include:
 
 
 ### `basic/`
@@ -62,6 +62,12 @@ See the README in [caching/](caching/).
 Connect Hibernate to a SQLite database.
 
 See the README in [sqlite/](sqlite/).
+
+### `codegen/`
+
+Use the *Hibernate Tools* library to codegen Java source code (entities) from an existing database schema.
+
+See the README in [codegen/](codegen/).
 
 
 ## Wish List
