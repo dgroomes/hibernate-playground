@@ -1,18 +1,18 @@
 [versions]
 # SLF4J releases: http://www.slf4j.org/news.html
-slf4j = "2.0.6"
+slf4j = "2.0.7"
 
 # Logback releases: http://logback.qos.ch/download.html
-logback = "1.4.5"
+logback = "1.4.8"
 
 # H2 releases: https://github.com/h2database/h2database/releases
-h2 = "2.1.214"
+h2 = "2.2.220"
 
 # Hibernate ORM releases: https://hibernate.org/orm/releases/
-hibernate = "6.1.6.Final"
+hibernate = "6.2.6.Final"
 
 # Caffeine releases: https://github.com/ben-manes/caffeine/releases
-caffeine = "3.1.2"
+caffeine = "3.1.6"
 
 
 [libraries]

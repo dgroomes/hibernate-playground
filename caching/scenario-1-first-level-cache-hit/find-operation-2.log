@@ -1,14 +1,14 @@
-12:33:04 [main] INFO  dgroomes.InteractionSimulator - Executing the same 'find' operation a second time...
-12:33:04 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.Observation#1]
-12:33:04 [main] TRACE o.h.e.i.DefaultLoadEventListener - Attempting to resolve: [dgroomes.db.Observation#1]
-12:33:04 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
-12:33:04 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
-12:33:04 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
-12:33:04 [main] INFO  dgroomes.InteractionSimulator - Found ...
-12:33:04 [main] INFO  dgroomes.InteractionSimulator - Observation (id=1, type=Uninteresting observation): The sky is blue
-12:33:04 [main] INFO  dgroomes.InteractionSimulator -
-12:33:04 [main] TRACE org.hibernate.internal.SessionImpl - Closing session [c27ecfeb-25d1-45fc-a57b-cc6bd3add4d4]
-12:33:04 [main] TRACE o.h.e.j.internal.JdbcCoordinatorImpl - Closing JDBC container [org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl@2b44d6d0]
-12:33:04 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
-12:33:04 [main] TRACE o.h.r.j.i.LogicalConnectionManagedImpl - Closing logical connection
-12:33:04 [main] TRACE o.h.r.j.i.LogicalConnectionManagedImpl - Logical connection closed
+22:52:22 [main] INFO  dgroomes.InteractionSimulator - Executing the same 'find' operation a second time...
+22:52:22 [main] TRACE o.h.e.i.DefaultLoadEventListener - Loading entity: [dgroomes.db.Observation#1]
+22:52:22 [main] TRACE o.h.e.i.DefaultLoadEventListener - Attempting to resolve: [dgroomes.db.Observation#1]
+22:52:22 [main] TRACE o.h.r.j.i.AbstractLogicalConnectionImplementor - LogicalConnection#afterTransaction
+22:52:22 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+22:52:22 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+22:52:22 [main] INFO  dgroomes.InteractionSimulator - Found ...
+22:52:22 [main] INFO  dgroomes.InteractionSimulator - Observation (id=1, type=Uninteresting observation): The sky is blue
+22:52:22 [main] INFO  dgroomes.InteractionSimulator -
+22:52:22 [main] TRACE org.hibernate.internal.SessionImpl - Closing session [8af6f97a-5db6-4dd8-a948-68034db215ee]
+22:52:22 [main] TRACE o.h.e.j.internal.JdbcCoordinatorImpl - Closing JDBC container [org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl@1efac5b9]
+22:52:22 [main] TRACE o.h.r.j.i.ResourceRegistryStandardImpl - Releasing JDBC resources
+22:52:22 [main] TRACE o.h.r.j.i.LogicalConnectionManagedImpl - Closing logical connection
+22:52:22 [main] TRACE o.h.r.j.i.LogicalConnectionManagedImpl - Logical connection closed

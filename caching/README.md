@@ -37,10 +37,10 @@ Follow these instructions to run the demo:
    * The final scenario executes similarly to the previous scenario except now the second-level cache is in the mix.
      Specifically, the first request causes the entity to be saved in the second-level cache (JCache/Caffeine). Notice
      the log:
-     > 20:20:23 [main] DEBUG o.h.orm.results.loading.entity - (ENTITYRESULTINITIALIZER) Adding entityInstance to second-level cache: dgroomes.db.Observation#1
+     > 22:52:22 [main] DEBUG o.h.orm.results.loading.entity - (ENTITYRESULTINITIALIZER) Adding entityInstance to second-level cache: dgroomes.db.Observation#1
      
      Then, when the second request occurs, there is a cache hit. Notice the log:
-     > 20:20:23 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Cache hit : region = `dgroomes.db.Observation`, key = `dgroomes.db.Observation#1`
+     > 22:52:22 [main] DEBUG o.h.c.s.s.AbstractReadWriteAccess - Cache hit : region = `dgroomes.db.Observation`, key = `dgroomes.db.Observation#1`
 
 
 ## Wish List
