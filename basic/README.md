@@ -22,18 +22,17 @@ Follow these instructions to run the demo:
      $ ./gradlew run
 
      > Task :run
-     22:53:03 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     22:53:03 [main] INFO SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-     22:53:04 [main] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.observation from observations o1_0
-     22:53:04 [main] INFO dgroomes.App - The HQL query found results...
-     22:53:04 [main] INFO dgroomes.App - Observation (1): The sky is blue
-     22:53:04 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
-     22:53:04 [main] INFO dgroomes.App - 
-     22:53:04 [main] DEBUG org.hibernate.SQL - select * from observations
-     22:53:04 [main] INFO dgroomes.App - The hand-written SQL query found results...
-     22:53:04 [main] INFO dgroomes.App - Observation (1): The sky is blue
-     22:53:04 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
-     22:53:04 [main] INFO dgroomes.App -
+     22:49:10 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     22:49:11 [main] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.observation from observations o1_0
+     22:49:11 [main] INFO dgroomes.App - The HQL query found results...
+     22:49:11 [main] INFO dgroomes.App - Observation (1): The sky is blue
+     22:49:11 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
+     22:49:11 [main] INFO dgroomes.App -
+     22:49:11 [main] DEBUG org.hibernate.SQL - select * from observations
+     22:49:11 [main] INFO dgroomes.App - The hand-written SQL query found results...
+     22:49:11 [main] INFO dgroomes.App - Observation (1): The sky is blue
+     22:49:11 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
+     22:49:11 [main] INFO dgroomes.App -
      ```
 
 
