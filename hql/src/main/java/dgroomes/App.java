@@ -81,9 +81,17 @@ public class App {
    * used to get the 'description' column. This is kind of annoying because it slows down the application, makes the
    * logs noisy and creates more points of failure (e.g. what if the first request is fine, but the second or third requests
    * fail?).
+   * <p>
+   * This pattern of extra fetches is known as the "n + 1 selects" problem. There are options to mitigate it, but they come with
+   * trade-offs. One option is to use a "join fetch" in the HQL query. This will cause Hibernate to issue a single SQL
+   * statement to the database.
    */
   private static void queryWithHql(Session session) {
-    var observations = session.createQuery("select o from Observation o join fetch ObservationType ot", Observation.class).list();
+    var observations = session.createQuery("select o from Observation o", Observation.class).list();
+
+    // Alternatively, we might issue the following similar query that does a "join fetch" to fetch both the 'observations'
+    // and 'observation_types' data in a single SQL statement: "select o from Observation o join fetch o.type".
+
     log.info("The HQL query found results...");
     for (var observation : observations) {
       log.info("Observation (id={}, type={}): {}", observation.getId(), observation.getType().getDescription(), observation.getObservation());
