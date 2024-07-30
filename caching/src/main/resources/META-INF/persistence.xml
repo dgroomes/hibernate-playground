@@ -14,7 +14,6 @@
         <properties>
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:h2:mem:hibernateplayground"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.highlight_sql" value="true"/>
@@ -30,7 +29,6 @@
         <properties>
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:h2:mem:hibernateplayground"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.highlight_sql" value="true"/>
