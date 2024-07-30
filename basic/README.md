@@ -3,7 +3,7 @@
 A basic demo of Hibernate ORM.
 
 
-## Description
+## Overview
 
 This project defines a Java program that connects to an embedded H2 database using Hibernate.
 
@@ -12,7 +12,7 @@ This project defines a Java program that connects to an embedded H2 database usi
 
 Follow these instructions to run the demo:
 
-1. Use Java 17
+1. Pre-requisite: Java 11
 2. Run the program:
    * ```shell
      ./gradlew run
@@ -48,11 +48,11 @@ don't need in the doc, but I'll read it.
 
 Here is a sign of age: <https://github.com/hibernate/hibernate-orm/releases>. The GitHub repo page still includes the
 "Releases" section. This is a common pitfall for projects that once used GitHub "Releases" to demarcate new releases
-but have since adopted a different strategy. The "Releases" section is thus a trap for newcomers who think that the 6 year
-old release on the frontpage is actually the latest release, when it's really not.
+but have since adopted a different strategy. The "Releases" section is thus a trap for newcomers who think that the 6-year-old
+release on the frontpage is actually the latest release, when it's really not.
 
 Another sign of age. The [*Hibernate Getting Started Guide*](https://docs.jboss.org/hibernate/orm/current/quickstart/html_single/#obtaining)
-says to download the Hibernate ZIP file from Sourceforge. But it looks like Sourceforge only went up to Hibernate 6.0.0
+says to download the Hibernate ZIP file from Sourceforge. But it looks like Sourceforge only went up to Hibernate 6.0.0,
 and maybe they've since abandoned it. Hibernate 6.1.1.Final was releases July 2022. I really want to download the ZIP
 because it apparently has a runnable example in a directory named `basic/`. I really want a runnable example because I
 can't figure out where to put my JDBC URL (I'm lost. I am supposed to use `hibernate.cfg.xml`? I can't find an example of
@@ -63,7 +63,7 @@ Here is my first exception I'm not sure what do about (before Googling, that is)
 
 > Exception in thread "main" java.lang.UnsupportedOperationException: The application must supply JDBC connections
 
-StackOverflow let's me know that this just means you need the configuration `hibernate.connection.url`. I was missing the
+StackOverflow lets me know that this just means you need the configuration `hibernate.connection.url`. I was missing the
 `hibernate.` leading part because this is how it is shown in the [*Hibernate Getting Started Guide*](https://docs.jboss.org/hibernate/orm/current/quickstart/html_single/#hibernate-gsg-tutorial-basic-config). 
 
 Why does Hibernate have its own logging sub-system? I see logs like this:
