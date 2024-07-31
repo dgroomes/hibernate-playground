@@ -1,7 +1,6 @@
 package dgroomes.db;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "observations")
