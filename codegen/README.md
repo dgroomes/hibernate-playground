@@ -37,27 +37,26 @@ Follow these instructions to run the demo:
      ./gradlew run
      ```
    * Altogether, it should look like this:
-     ```text
-     ❯ ./gradlew run
-     
-     > Task :run
-     00:17:58 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     00:17:58 [main] DEBUG org.hibernate.SQL - 
+   * ```text
+     $ ./gradlew run
+
+     21:24:05 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     21:24:06 [main] DEBUG org.hibernate.SQL - 
          /* <criteria> */ select
              o1_0.id,
              o1_0.observation,
              o1_0.type,
-             o2_0.id,
-             o2_0.description 
+             ot1_0.id,
+             ot1_0.description 
          from
              public.observations o1_0 
          join
-             public.observation_types o2_0 
-                 on o2_0.id=o1_0.type
-     00:17:58 [main] INFO dgroomes.App - The Criteria-based query found results...
-     00:17:58 [main] INFO dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
-     00:17:58 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
-     00:17:58 [main] INFO dgroomes.App -
+             public.observation_types ot1_0 
+                 on ot1_0.id=o1_0.type
+     21:24:06 [main] INFO dgroomes.codegen.App - The Criteria-based query found results...
+     21:24:06 [main] INFO dgroomes.codegen.App - Observation (id=1, type=Uninteresting observation): The sky is blue
+     21:24:06 [main] INFO dgroomes.codegen.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
+     21:24:06 [main] INFO dgroomes.codegen.App - 
      ```
 5. Stop the database:
     * ```shell

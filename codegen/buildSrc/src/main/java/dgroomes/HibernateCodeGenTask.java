@@ -37,7 +37,7 @@ public class HibernateCodeGenTask extends DefaultTask {
     try {
       RevengStrategy strategy = RevengStrategyFactory.createReverseEngineeringStrategy();
       {
-        var settings = new RevengSettings(strategy).setDefaultPackageName("dgroomes.db");
+        var settings = new RevengSettings(strategy).setDefaultPackageName("dgroomes.codegen.db");
         strategy.setSettings(settings);
       }
 

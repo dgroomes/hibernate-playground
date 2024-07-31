@@ -1,7 +1,7 @@
-package dgroomes;
+package dgroomes.codegen;
 
-import dgroomes.db.Observations;
-import dgroomes.db.Observations_;
+import dgroomes.codegen.db.Observations;
+import dgroomes.codegen.db.Observations_;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
