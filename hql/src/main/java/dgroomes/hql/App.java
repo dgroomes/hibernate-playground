@@ -1,7 +1,7 @@
-package dgroomes;
+package dgroomes.hql;
 
-import dgroomes.db.Observation;
-import dgroomes.db.ObservationType;
+import dgroomes.hql.db.Observation;
+import dgroomes.hql.db.ObservationType;
 import org.h2.Driver;
 import org.hibernate.Session;
 import org.hibernate.boot.Metadata;

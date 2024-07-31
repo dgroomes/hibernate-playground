@@ -1,4 +1,4 @@
-package dgroomes;
+package dgroomes.hql;
 
 import java.io.IOException;
 import java.io.InputStream;
