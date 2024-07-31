@@ -1,18 +1,14 @@
-package dgroomes.db;
+package dgroomes.criteria.db;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "observation_types")
 public class ObservationType {
 
   @Id
-  @GeneratedValue(generator="increment")
-  @GenericGenerator(name="increment", strategy = "increment")
   private int id;
 
   private String description;

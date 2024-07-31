@@ -1,4 +1,4 @@
-package dgroomes.db;
+package dgroomes.criteria.db;
 
 import jakarta.persistence.*;
 
@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 public class Observation {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   private String observation;
 

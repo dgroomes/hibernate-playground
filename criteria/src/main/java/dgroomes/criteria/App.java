@@ -1,7 +1,7 @@
-package dgroomes;
+package dgroomes.criteria;
 
-import dgroomes.db.Observation;
-import dgroomes.db.Observation_;
+import dgroomes.criteria.db.Observation;
+import dgroomes.criteria.db.Observation_;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

@@ -21,12 +21,11 @@ Follow these instructions to run the demo:
      ./gradlew run
      ```
    * Altogether, it should look like this:
-     ```text
+   * ```text
      $ ./gradlew run
      
-     > Task :run
-     23:22:24 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     23:22:25 [main] DEBUG org.hibernate.SQL - 
+     21:28:09 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     21:28:10 [main] DEBUG org.hibernate.SQL - 
          /* <criteria> */ select
              o1_0.id,
              o1_0.observation,
@@ -37,10 +36,10 @@ Follow these instructions to run the demo:
          join
              observation_types t1_0 
                  on t1_0.id=o1_0.type
-     23:22:25 [main] INFO dgroomes.App - The Criteria-based query found results...
-     23:22:25 [main] INFO dgroomes.App - Observation (id=1, type=Uninteresting observation): The sky is blue
-     23:22:25 [main] INFO dgroomes.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
-     23:22:25 [main] INFO dgroomes.App -
+     21:28:10 [main] INFO dgroomes.criteria.App - The Criteria-based query found results...
+     21:28:10 [main] INFO dgroomes.criteria.App - Observation (id=1, type=Uninteresting observation): The sky is blue
+     21:28:10 [main] INFO dgroomes.criteria.App - Observation (id=2, type=Interesting observation): The speed of light can circle the earth 7 times in a second
+     21:28:10 [main] INFO dgroomes.criteria.App - 
      ```
 
 
