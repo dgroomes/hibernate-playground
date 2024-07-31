@@ -8,7 +8,6 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.dialect.H2Dialect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +41,6 @@ public class App {
     System.setProperty("org.jboss.logging.provider", "slf4j");
 
     StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-            .applySetting("hibernate.dialect", H2Dialect.class.getName())
             .applySetting("hibernate.connection.driver_class", Driver.class.getName())
             .applySetting("hibernate.connection.url", "jdbc:h2:mem:hibernateplayground")
             .applySetting("hibernate.format_sql", true)

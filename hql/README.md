@@ -3,7 +3,7 @@
 An illustration of Hibernate's *Hibernate Query Language* (HQL).
 
 
-## Description
+## Overview
 
 The most technically impressive feature of Hibernate (and other ORMs) is their hallmark feature of turning row-based
 data into graph-based data (and vice-versa). Specifically, this means turning the row-based data in the table of a SQL
@@ -26,7 +26,7 @@ important feature:
 
 Follow these instructions to run the demo:
 
-1. Use Java 17
+1. Pre-requisite: Java 21
 2. Run the program:
    * ```shell
      ./gradlew run
