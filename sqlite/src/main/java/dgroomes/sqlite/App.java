@@ -1,6 +1,6 @@
-package dgroomes;
+package dgroomes.sqlite;
 
-import dgroomes.db.Observation;
+import dgroomes.sqlite.db.Observation;
 import org.hibernate.Session;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
