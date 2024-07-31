@@ -1,14 +1,14 @@
-package dgroomes.db;
+package dgroomes.caching.db;
 
-import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "observation_types")
 public class ObservationType {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
 
   private String description;

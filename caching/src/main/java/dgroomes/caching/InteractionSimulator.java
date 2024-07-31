@@ -1,6 +1,6 @@
-package dgroomes;
+package dgroomes.caching;
 
-import dgroomes.db.Observation;
+import dgroomes.caching.db.Observation;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.slf4j.Logger;

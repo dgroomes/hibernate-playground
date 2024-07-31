@@ -8,8 +8,8 @@
 
     <persistence-unit name="without-second-level-caching">
 
-        <class>dgroomes.db.Observation</class>
-        <class>dgroomes.db.ObservationType</class>
+        <class>dgroomes.caching.db.Observation</class>
+        <class>dgroomes.caching.db.ObservationType</class>
 
         <properties>
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
@@ -23,8 +23,8 @@
 
     <persistence-unit name="with-second-level-caching">
 
-        <class>dgroomes.db.Observation</class>
-        <class>dgroomes.db.ObservationType</class>
+        <class>dgroomes.caching.db.Observation</class>
+        <class>dgroomes.caching.db.ObservationType</class>
 
         <properties>
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
