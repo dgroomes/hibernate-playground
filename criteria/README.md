@@ -15,7 +15,7 @@ This project implements a basic Java program that showcases the Criteria API usi
 
 Follow these instructions to run the demo:
 
-1. Use Java 17
+1. Pre-requisite: Java 21
 2. Run the program:
    * ```shell
      ./gradlew run
@@ -49,7 +49,7 @@ Follow these instructions to run the demo:
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Is there a way to get a single-fetch for the join query? When you turn on SQL statement logging, Hibernate is
-      making two follow up SQL queries to the `observation_types` table. I made some progress with "fetch". From some
+      making two follow-up SQL queries to the `observation_types` table. I made some progress with "fetch". From some
       reading, I hope the Criteria API will save me. I was interested in this API anyway.
 * [X] OBSOLETE (This question was investigated in the `codegen/` subproject of this repo. See it.) Codegen the entity classes. Can Hibernate codegen from DDL files or does it need a server? This poses a problem
       because we like ephemeral databases for demos.

@@ -1,6 +1,6 @@
 plugins {
     application
-    id("org.hibernate.orm") version "6.1.6.Final"
+    alias(libs.plugins.hibernate)
 }
 
 repositories {
