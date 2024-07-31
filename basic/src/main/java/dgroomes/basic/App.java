@@ -1,4 +1,4 @@
-package dgroomes;
+package dgroomes.basic;
 
 import org.h2.Driver;
 import org.hibernate.Session;

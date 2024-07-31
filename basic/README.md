@@ -19,24 +19,22 @@ Follow these instructions to run the demo:
      ./gradlew run
      ```
    * Altogether, it should look like this:
-     ```text
-     $ ./gradlew run
-
-     20:38:19 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     20:38:19 [main] DEBUG org.hibernate.SQL - insert into observations (observation,id) values (?,default)
-     20:38:19 [main] INFO dgroomes.App - Inserted a new observation and it was auto-assigned the ID: 3
-     20:38:19 [main] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.observation from observations o1_0
-     20:38:19 [main] INFO dgroomes.App - The HQL query found results...
-     20:38:19 [main] INFO dgroomes.App - Observation (1): The sky is blue
-     20:38:19 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
-     20:38:19 [main] INFO dgroomes.App - Observation (3): Programming is fun
-     20:38:19 [main] INFO dgroomes.App -
-     20:38:19 [main] DEBUG org.hibernate.SQL - select * from observations
-     20:38:19 [main] INFO dgroomes.App - The hand-written SQL query found results...
-     20:38:19 [main] INFO dgroomes.App - Observation (1): The sky is blue
-     20:38:19 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
-     20:38:19 [main] INFO dgroomes.App - Observation (3): Programming is fun
-     20:38:19 [main] INFO dgroomes.App -
+   * ```text
+     21:13:05 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     21:13:06 [main] DEBUG org.hibernate.SQL - insert into observations (observation,id) values (?,default)
+     21:13:06 [main] INFO dgroomes.basic.App - Inserted a new observation and it was auto-assigned the ID: 3
+     21:13:06 [main] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.observation from observations o1_0
+     21:13:06 [main] INFO dgroomes.basic.App - The HQL query found results...
+     21:13:06 [main] INFO dgroomes.basic.App - Observation (1): The sky is blue
+     21:13:06 [main] INFO dgroomes.basic.App - Observation (2): The speed of light can circle the earth 7 times in a second
+     21:13:06 [main] INFO dgroomes.basic.App - Observation (3): Programming is fun
+     21:13:06 [main] INFO dgroomes.basic.App - 
+     21:13:06 [main] DEBUG org.hibernate.SQL - select * from observations
+     21:13:06 [main] INFO dgroomes.basic.App - The hand-written SQL query found results...
+     21:13:06 [main] INFO dgroomes.basic.App - Observation (1): The sky is blue
+     21:13:06 [main] INFO dgroomes.basic.App - Observation (2): The speed of light can circle the earth 7 times in a second
+     21:13:06 [main] INFO dgroomes.basic.App - Observation (3): Programming is fun
+     21:13:06 [main] INFO dgroomes.basic.App -
      ```
 
 
