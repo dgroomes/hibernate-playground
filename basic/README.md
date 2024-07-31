@@ -5,14 +5,15 @@ A basic demo of Hibernate ORM.
 
 ## Overview
 
-This project defines a Java program that connects to an embedded H2 database using Hibernate.
+This project defines a Java program that connects to an embedded H2 database using Hibernate. It does the basics:
+`insert` and `select`.
 
 
 ## Instructions
 
 Follow these instructions to run the demo:
 
-1. Pre-requisite: Java 11
+1. Pre-requisite: Java 21
 2. Run the program:
    * ```shell
      ./gradlew run
@@ -21,18 +22,21 @@ Follow these instructions to run the demo:
      ```text
      $ ./gradlew run
 
-     > Task :run
-     22:49:10 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
-     22:49:11 [main] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.observation from observations o1_0
-     22:49:11 [main] INFO dgroomes.App - The HQL query found results...
-     22:49:11 [main] INFO dgroomes.App - Observation (1): The sky is blue
-     22:49:11 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
-     22:49:11 [main] INFO dgroomes.App -
-     22:49:11 [main] DEBUG org.hibernate.SQL - select * from observations
-     22:49:11 [main] INFO dgroomes.App - The hand-written SQL query found results...
-     22:49:11 [main] INFO dgroomes.App - Observation (1): The sky is blue
-     22:49:11 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
-     22:49:11 [main] INFO dgroomes.App -
+     20:38:19 [main] WARN org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+     20:38:19 [main] DEBUG org.hibernate.SQL - insert into observations (observation,id) values (?,default)
+     20:38:19 [main] INFO dgroomes.App - Inserted a new observation and it was auto-assigned the ID: 3
+     20:38:19 [main] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.observation from observations o1_0
+     20:38:19 [main] INFO dgroomes.App - The HQL query found results...
+     20:38:19 [main] INFO dgroomes.App - Observation (1): The sky is blue
+     20:38:19 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
+     20:38:19 [main] INFO dgroomes.App - Observation (3): Programming is fun
+     20:38:19 [main] INFO dgroomes.App -
+     20:38:19 [main] DEBUG org.hibernate.SQL - select * from observations
+     20:38:19 [main] INFO dgroomes.App - The hand-written SQL query found results...
+     20:38:19 [main] INFO dgroomes.App - Observation (1): The sky is blue
+     20:38:19 [main] INFO dgroomes.App - Observation (2): The speed of light can circle the earth 7 times in a second
+     20:38:19 [main] INFO dgroomes.App - Observation (3): Programming is fun
+     20:38:19 [main] INFO dgroomes.App -
      ```
 
 
@@ -90,6 +94,8 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE Implement a raw SQL example
 * [x] NOT POSSIBLE (Apparently this is not a feature of Hibernate. See [this post](https://stackoverflow.com/q/1413190))
       Can we specify all the entity types by package instead of class-by-class?
+* [x] DONE Figure the replacement for the now-deprecated `GenericGenerator` annotation. Now I realize I should
+  do a programmatic insert.
 
 
 ## Reference
