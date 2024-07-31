@@ -15,15 +15,15 @@ community dialects [here](https://github.com/hibernate/hibernate-orm/blob/main/d
 
 ## Instructions
 
-Follow these instructions to run the demo:
+Follow these instructions to run the demo.
 
-1. Initialize a SQLite db with the schema and sample data:
+1. Pre-requisite: Java 21
+2. Initialize a SQLite db with the schema and sample data:
    * ```shell
      sqlite3 observations.db < schema/1-observations-schema.sql
      sqlite3 observations.db < schema/2-observations-data.sql
      ```
-3. Use Java 17
-4. Run the program:
+3. Run the program:
    * ```shell
      ./gradlew run
      ```

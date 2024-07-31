@@ -1,4 +1,4 @@
 create table observations(
-    id int not null primary key,
+    id integer primary key autoincrement,
     observation text not null
 );

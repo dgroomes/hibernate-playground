@@ -1,12 +1,7 @@
 [versions]
-# SLF4J releases: http://www.slf4j.org/news.html
-slf4j = "2.0.7"
-
-# SQLite JDBC releases: https://github.com/xerial/sqlite-jdbc/releases
-sqlite = "3.42.0.0"
-
-# Hibernate ORM releases: https://hibernate.org/orm/releases/
-hibernate = "6.2.6.Final"
+slf4j = "2.0.13" # SLF4J releases: http://www.slf4j.org/news.html
+hibernate = "6.5.2.Final" # Hibernate ORM releases: https://hibernate.org/orm/releases/
+sqlite = "3.46.0.1" # SQLite JDBC releases: https://github.com/xerial/sqlite-jdbc/releases
 
 
 [libraries]
