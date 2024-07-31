@@ -18,12 +18,12 @@ features because this plugin is just for me.
 
 Follow these instructions to run the demo:
 
-1. Start the Postgres database:
+1. Pre-requisites: Java 21, Docker
+2. Start the Postgres database:
     * ```shell
-      docker-compose up --renew-anon-volumes --detach
+      docker compose up --renew-anon-volumes --detach
       ```
     * This will start the database and initialize the schema and sample data.
-2. Use Java 17
 3. Codegen the entity classes
    * This step is only needed if you have changed the database schema. For example, if you added a new column to an
      existing table, then you'll need to regenerate the Java entity class for that table so that it can map to that column.
@@ -61,7 +61,7 @@ Follow these instructions to run the demo:
      ```
 5. Stop the database:
     * ```shell
-      docker-compose down
+      docker compose down
       ```
 
 
@@ -69,7 +69,7 @@ Follow these instructions to run the demo:
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] Use a Gradle version catalog (TOML)
+* [x] DONE Use a Gradle version catalog (TOML)
 
 
 ## Reference

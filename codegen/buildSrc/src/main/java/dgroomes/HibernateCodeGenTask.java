@@ -2,7 +2,6 @@ package dgroomes;
 
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.TaskAction;
-import org.hibernate.dialect.PostgreSQLDialect;
 import org.hibernate.tool.api.export.Exporter;
 import org.hibernate.tool.api.export.ExporterConstants;
 import org.hibernate.tool.api.export.ExporterFactory;
@@ -45,7 +44,6 @@ public class HibernateCodeGenTask extends DefaultTask {
       MetadataDescriptor metadataDescriptor;
       {
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", PostgreSQLDialect.class.getName());
         properties.put("hibernate.connection.driver_class", Driver.class.getName());
         properties.put("hibernate.connection.url", "jdbc:postgresql:postgres");
         properties.put("hibernate.connection.username", "postgres");

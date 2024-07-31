@@ -15,8 +15,8 @@ repositories {
     mavenCentral()
 }
 
-val hibernateVersion = "6.2.6.Final" // Hibernate ORM releases: https://hibernate.org/orm/releases/
-val postgresVersion = "42.6.0" // Postgres JDBC releases: https://jdbc.postgresql.org/ and https://search.maven.org/artifact/org.postgresql/postgresql
+val hibernateVersion = "6.5.2.Final" // Hibernate ORM releases: https://hibernate.org/orm/releases/
+val postgresVersion = "42.7.3" // Postgres JDBC releases: https://jdbc.postgresql.org/changelogs/
 
 dependencies {
     implementation("org.hibernate.tool:hibernate-tools-orm:$hibernateVersion")
